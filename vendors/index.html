@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Preferred Vendor Directory — Scott Steele</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Gill Sans','Gill Sans MT',Calibri,sans-serif;background:#FAF8F4;color:#050A14;}
+  .serif{font-family:'Didot','Hoefler Text',Georgia,serif;}
+
+  /* NAV */
+  .nav{background:#050A14;padding:0 32px;display:flex;justify-content:space-between;align-items:center;height:56px;border-bottom:1px solid #15263A;}
+  .nav-brand{display:flex;align-items:center;gap:10px;}
+  .nav-name{font-family:Georgia,serif;font-size:15px;color:#FAF8F4;letter-spacing:2px;text-transform:uppercase;}
+  .nav-divider{width:1px;height:11px;background:#2A4866;}
+  .nav-tag{font-size:8px;color:#B89D5A;letter-spacing:3px;text-transform:uppercase;}
+  .nav-right{font-size:8px;color:#B89D5A;letter-spacing:2px;text-transform:uppercase;}
+
+  /* HERO */
+  .hero{background:#050A14;padding:60px 32px 68px;}
+  .hero-eyebrow{font-size:8px;letter-spacing:5px;text-transform:uppercase;color:#B89D5A;margin-bottom:18px;}
+  .hero-title{font-family:Georgia,serif;font-size:52px;color:#FAF8F4;line-height:.92;letter-spacing:-1.5px;font-style:italic;margin-bottom:18px;}
+  .hero-title span{font-style:normal;}
+  .hero-title .gold{font-style:normal;color:#B89D5A;}
+  .hero-rule{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
+  .hero-rule-line{width:32px;height:1px;background:#B89D5A;}
+  .hero-rule-text{font-size:8px;color:#B89D5A;letter-spacing:3px;text-transform:uppercase;}
+  .hero-body{font-size:15px;color:#9AB0C8;line-height:1.85;font-weight:300;max-width:540px;margin-bottom:20px;}
+  .hero-note{background:#0D1A2E;border-left:3px solid #B89D5A;padding:12px 18px;max-width:540px;font-size:10px;color:#9AB0C8;line-height:1.7;}
+
+  /* FILTER BAR */
+  .filterbar{background:#000;padding:12px 32px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;border-bottom:1px solid #1A1A1A;position:sticky;top:0;z-index:100;}
+  .filter-label{font-size:8px;color:#B89D5A;letter-spacing:2px;text-transform:uppercase;margin-right:4px;}
+  .filter-btn{background:none;color:#6A6560;border:1px solid #2A2A2A;padding:4px 12px;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;font-family:inherit;transition:all .15s;}
+  .filter-btn:hover{color:#B89D5A;border-color:#B89D5A;}
+  .filter-btn.active{background:#B89D5A;color:#050A14;border-color:#B89D5A;font-weight:700;}
+
+  /* VENDOR LIST */
+  .vlist{padding:32px 32px;display:flex;flex-direction:column;gap:3px;}
+
+  /* CATEGORY */
+  .cat-section{margin-bottom:3px;}
+  .cat-header{padding:13px 18px;display:flex;justify-content:space-between;align-items:center;}
+  .cat-header-dark{background:#050A14;}
+  .cat-header-mid{background:#0D1A2E;}
+  .cat-header-left{display:flex;align-items:center;gap:8px;}
+  .cat-header-emoji{font-size:16px;}
+  .cat-header-name{font-family:Georgia,serif;font-size:15px;color:#FAF8F4;}
+  .cat-header-count{font-size:8px;color:#B89D5A;letter-spacing:2px;text-transform:uppercase;}
+  .cat-body{padding:16px;background:#fff;border:1px solid #E8E3DC;border-top:none;}
+  .vendor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+  .vendor-card{padding:13px;border:1px solid #F0EBE3;background:#FDFBF7;}
+  .vc-tag{font-size:8px;color:#B89D5A;letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;}
+  .vc-name{font-family:Georgia,serif;font-size:16px;color:#050A14;margin-bottom:3px;}
+  .vc-loc{font-size:9px;color:#6A8AA8;margin-bottom:4px;}
+  .vc-desc{font-size:10px;color:#3A4D62;line-height:1.5;font-weight:300;margin-bottom:4px;}
+  .vc-phone{font-size:9px;color:#3A4D62;margin-bottom:2px;}
+  .vc-email{font-size:9px;color:#3A4D62;margin-bottom:2px;}
+  .vc-web{font-size:9px;color:#B89D5A;}
+  .vc-referral{font-size:9px;color:#9AA0A8;font-style:italic;}
+
+  /* PARTNERS special */
+  .partner-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .partner-card{padding:18px;border:1px solid #F0EBE3;background:#FDFBF7;}
+  .pc-badge{font-size:8px;color:#B89D5A;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
+  .pc-name{font-family:Georgia,serif;font-size:15px;color:#050A14;margin-bottom:3px;}
+  .pc-title{font-size:10px;color:#6A8AA8;margin-bottom:8px;}
+  .pc-address{background:#F2EEE7;border:1px solid #DDD8CF;padding:8px 10px;margin-top:8px;font-size:9px;color:#3A4D62;line-height:1.5;}
+  .pc-addr-label{font-size:8px;color:#B89D5A;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3px;}
+  .pc-addr-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px;}
+  .pc-fine{font-size:9px;color:#9AA0A8;margin-top:6px;}
+
+  /* FOOTER */
+  .footer{background:#000;padding:24px 32px 18px;}
+  .footer-inner{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
+  .footer-left .f-name{font-family:Georgia,serif;font-size:16px;color:#FAF8F4;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;}
+  .footer-left .f-title{font-size:8px;color:#B89D5A;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
+  .footer-left .f-contact{font-size:9px;color:#6A6560;}
+  .footer-logo img{height:44px;width:auto;}
+  .footer-copy{border-top:1px solid #1A1A1A;padding-top:10px;display:flex;justify-content:space-between;}
+  .footer-copy span{font-size:8px;color:#3A3A3A;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-brand">
+    <span class="nav-name">Scott Steele</span>
+    <span class="nav-divider"></span>
+    <span class="nav-tag">Realtor</span>
+  </div>
+  <div class="nav-right">CEO · Operating Principal · Realtor · 508.813.9267</div>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">Preferred Vendor Directory</div>
+  <div class="hero-title serif">People I trust <span>in your</span><br><span class="gold">home.</span></div>
+  <div class="hero-rule">
+    <div class="hero-rule-line"></div>
+    <div class="hero-rule-text">The Ponte Group · Keller Williams South Watuppa · SE Mass &amp; RI</div>
+  </div>
+  <div class="hero-body">A curated list of vetted local contractors, service providers, and tradespeople serving Southeastern Massachusetts and Rhode Island. Every vendor has been gathered and reviewed for use by our clients, agents, and partners.</div>
+  <div class="hero-note">All contact details are believed current — always confirm before engaging. This directory is provided as a courtesy resource. Scott Steele and The Ponte Group do not warrant the services of any vendor listed. Always verify licensing, insurance, and availability before engaging.</div>
+</div>
+
+<div class="filterbar">
+  <span class="filter-label">Filter:</span>
+  <button class="filter-btn active" onclick="fv('all',this)">All</button>
+  <button class="filter-btn" onclick="fv('cleaning',this)">Cleaning</button>
+  <button class="filter-btn" onclick="fv('electrical',this)">Electrical</button>
+  <button class="filter-btn" onclick="fv('inspections',this)">Inspections</button>
+  <button class="filter-btn" onclick="fv('contractor',this)">Contractors</button>
+  <button class="filter-btn" onclick="fv('landscaping',this)">Landscaping</button>
+  <button class="filter-btn" onclick="fv('plumbing',this)">Plumbing &amp; HVAC</button>
+  <button class="filter-btn" onclick="fv('other',this)">Other Trades</button>
+  <button class="filter-btn" onclick="fv('partners',this)">Lenders &amp; Title</button>
+</div>
+
+<div class="vlist">
+
+  <!-- CLEANING & JUNK REMOVAL -->
+  <div class="cat-section" data-cat="cleaning">
+    <div class="cat-header cat-header-dark">
+      <div class="cat-header-left"><span class="cat-header-emoji">🧹</span><span class="cat-header-name">Cleaning &amp; Junk Removal</span></div>
+      <span class="cat-header-count">8 vendors</span>
+    </div>
+    <div class="cat-body">
+      <div class="vendor-grid">
+        <div class="vendor-card"><div class="vc-name">A&amp;A Spectacular Cleaning</div><div class="vc-loc">Fall River, MA</div><div class="vc-desc">Residential &amp; commercial cleaning.</div><div class="vc-phone">(508) 933-7701</div><div class="vc-web">aaspectacularcleaning.com</div></div>
+        <div class="vendor-card"><div class="vc-name">Ebbs &amp; Flows Window Cleaning</div><div class="vc-loc">Halifax, MA</div><div class="vc-desc">Windows, move-outs, post-construction.</div><div class="vc-phone">(781) 366-0923</div><div class="vc-email">ebbsflows@gmail.com</div><div class="vc-web">ebbswindowcleaning.com</div></div>
+        <div class="vendor-card"><div class="vc-name">Lucia's / Lucy's Cleaning &amp; Junk Removal</div><div class="vc-loc">149 Thomas St, Middleboro, MA 02346</div><div class="vc-phone">774-226-3458</div><div class="vc-email">stephanie@luciascleaning.net</div><div class="vc-web">luciascleaning.net</div></div>
+        <div class="vendor-card"><div class="vc-name">Janelle's Cleaning Services LLC</div><div class="vc-loc">Somerset, MA</div><div class="vc-referral">Contact via Facebook.</div></div>
+        <div class="vendor-card"><div class="vc-name">Married 2 the Mop Cleaning LLC</div><div class="vc-loc">Woburn, MA</div><div class="vc-desc">Residential &amp; commercial.</div><div class="vc-phone">(781) 933-3691</div><div class="vc-web">m2tmc.com</div></div>
+        <div class="vendor-card"><div class="vc-name">The Cleaning Queens LLC</div><div class="vc-loc">25 Walnut St, Middleboro, MA 02346</div><div class="vc-phone">508-738-1680</div><div class="vc-web">thecleaningqueensllc.com</div></div>
+        <div class="vendor-card"><div class="vc-name">Quality Auto Care (Mobile)</div><div class="vc-loc">Mobile — comes to you</div><div class="vc-desc">Mobile auto detailing.</div><div class="vc-web">facebook.com/qualityautocaremobile</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ELECTRICAL -->
+  <div class="cat-section" data-cat="electrical">
+    <div class="cat-header cat-header-mid">
+      <div class="cat-header-left"><span class="cat-header-emoji">⚡</span><span class="cat-header-name">Electrical</span></div>
+      <span class="cat-header-count">6 vendors</span>
+    </div>
+    <div class="cat-body">
+      <div class="vendor-grid">
+        <div class="vendor-card"><div class="vc-name">Blue Collar Electrical Services</div><div class="vc-loc">Taunton, MA 02780</div><div class="vc-phone">774-202-9488</div><div class="vc-web">bluecollarent.com</div></div>
+        <div class="vendor-card"><div class="vc-name">Hopkins Electric LLC</div><div class="vc-loc">280 Berkley St, Taunton, MA 02780</div><div class="vc-phone">(508) 818-3165</div><div class="vc-web">hopkinselectric-ma.com</div></div>
+        <div class="vendor-card"><div class="vc-name">Jonathan Almeida Electrician</div><div class="vc-loc">70 Fisher St, Taunton, MA 02780</div><div class="vc-phone">774-257-0478</div></div>
+        <div class="vendor-card"><div class="vc-name">King Electric, LLC</div><div class="vc-loc">Fall River, MA · Contact: Michael King · 15 yrs exp</div><div class="vc-phone">(508) 642-6029</div></div>
+        <div class="vendor-card"><div class="vc-name">Melanson Electric &amp; Safety</div><div class="vc-loc">219 Wilbur Ave, Somerset, MA 02725</div><div class="vc-desc">Free estimates.</div><div class="vc-phone">508-379-0859</div><div class="vc-web">melansonelectric.com</div></div>
+        <div class="vendor-card"><div class="vc-name">Tanner Lopes Electrician</div><div class="vc-loc">33 Scadding St, Taunton, MA 02780 · Lic #60910-B</div><div class="vc-phone">508-271-5234</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENGINEERING & INSPECTIONS -->
+  <div class="cat-section" data-cat="inspections">
+    <div class="cat-header cat-header-dark">
+      <div class="cat-header-left"><span class="cat-header-emoji">🏠</span><span class="cat-header-name">Engineering &amp; Inspections</span></div>
+      <span class="cat-header-count">3 vendors</span>
+    </div>
+    <div class="cat-body">
+      <div class="vendor-grid">
+        <div class="vendor-card"><div class="vc-name">Advanced Engineering Group, P.C.</div><div class="vc-loc">179 Swansea Mall Dr, Swansea, MA 02777</div><div class="vc-phone">508-343-1414</div><div class="vc-web">aegpc.net</div></div>
+        <div class="vendor-card"><div class="vc-name">Arrow Home Inspections</div><div class="vc-loc">SE Mass &amp; RI</div><div class="vc-desc">7-days/week scheduling available.</div><div class="vc-phone">401-243-4206</div><div class="vc-web">arrow-homeinspections.com</div></div>
+        <div class="vendor-card"><div class="vc-name">Building Engineering Resources, Inc.</div><div class="vc-loc">66 Main St, North Easton, MA 02356</div><div class="vc-phone">508-230-0260</div><div class="vc-web">ber-engineering.com</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FENCE & SHEDS -->
+  <div class="cat-section" data-cat="other">
+    <div class="cat-header cat-header-mid">
+      <div class="cat-header-left"><span class="cat-header-emoji">🏗️</span><span class="cat-header-name">Fence &amp; Sheds</span></div>
+      <span class="cat-header-count">2 vendors</span>
+    </div>
+    <div class="cat-body">
+      <div class="vendor-grid">
+        <div class="vendor-card"><div class="vc-name">Pro-Vision Fence Co.</div><div class="vc-loc">North Dighton, MA 02764</div><div class="vc-desc">Wood, vinyl, chain-link.</div><div class="vc-phone">(508) 669-4022</div><div class="vc-web">provisionfencecompany.com</div></div>
+        <div class="vendor-card"><div class="vc-name">Safe Harbor Sheds Swansea</div><div class="vc-loc">2434 GAR Hwy, Swansea, MA 02777</div><div class="vc-phone">774-955-0064</div><div class="vc-web">safeharborshedsswansea.com</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GENERAL CONTRACTOR -->
+  <div class="cat-section" data-cat="contractor">
+    <div class="cat-header cat-header-dark">
+      <div class="cat-header-left"><span class="cat-header-emoji">🔨</span><span class="cat-header-name">General Contractor &amp; Home Improvement</span></div>
+      <span class="cat-header-count">16 vendors</span>
+    </div>
+    <div class="cat-body">
+      <div class="vendor-grid">
+        <div class="vendor-card"><div class="vc-name">All Pro Home Services</div><div class="vc-loc">Dighton, MA</div><div class="vc-desc">Kitchen/bath remodel, flooring, decks, basement.</div><div class="vc-phone">(401) 400-9354</div><div class="vc-web">allprohomesvcs.com</div></div>
+        <div class="vendor-card"><div class="vc-name">American Pride Construction</div><div class="vc-loc">88 Faunce Corner Rd, Dartmouth, MA 02747</div><div class="vc-phone">774-992-8982</div><div class="vc-web">appgroupllc.com</div></div>
+        <div class="vendor-card"><div class="vc-name">CJN Construction</div><div class="vc-loc">Somerset, MA</div><div class="vc-desc">Decks, renovations, custom carpentry.</div><div class="vc-phone">(508) 558-7110</div><div class="vc-web">cjnconstruction.com</div></div>
+        <div class="vendor-card"><div class="vc-name">Dennis Leonardo Contracting LLC</div><div class="vc-desc">Building &amp; remodeling.</div><div class="vc-referral">Contact via Scott for referral.</div></div>
+        <div class="vendor-card"><div class="vc-name">E. Gordon Construction</div><div class="vc-loc">Dighton, MA</div><div class="vc-desc">Excavating &amp; septic services.</div><div class="vc-web">egordonconstructioninc.com</div></div>
+        <div class="vendor-card"><div class="vc-name">Gallagher Custom Carpentry &amp; Excavation</div><div class="vc-referral">Contact via Scott for referral.</div></div>
+        <div class="vendor-card"><div class="vc-name">Hetzler Contracting</div><div class="vc-loc">365 Hyde St, Fall River, MA 02720</div><div class="vc-phone">508-679-0553</div><div class="vc-web">hetzlercontracting.com</div></div>
+        <div class="vendor-card"><div class="vc-name">Kitchens Direct, Inc.</div><div class="vc-loc">945 Southampton Rd, Westfield, MA 01085</div><div class="vc-phone">413-568-3353</div><div class="vc-web">kitchensdirectmass.com</div></div>
+        <div class="vendor-card"><div class="vc-name">New England Star Remodeling</div><div class="vc-loc">397 Chestnut Hill Rd, Chepachet, RI 02814</div><div class="vc-phone">(775) 955-5924 — verify phone</div><div class="vc-web">ne-star.com</div></div>
+        <div class="vendor-card"><div class="vc-name">NJW Home Services LLC</div><div class="vc-loc">Fairhaven, MA 02719</div><div class="vc-phone">(774) 400-7448</div><div class="vc-web">njwhomeservices.com</div></div>
+        <div class="vendor-card"><div class="vc-name">PADJ Construction LLC</div><div class="vc-phone">774-707-6263</div><div class="vc-web">padjconstruction.com</div></div>
+        <div class="vendor-card"><div class="vc-name">Preferred Home Improvement LLC</div><div class="vc-referral">Contact via Scott for referral.</div></div>
+        <div class="vendor-card"><div class="vc-name">R.N.B. Home Improvements</div><div class="vc-desc">Kitchen/bath/basement remodeling, decks, windows, doors.</div><div class="vc-phone">508-542-8995</div></div>
+        <div class="vendor-card"><div class="vc-name">RNB Assembly</div><div class="vc-desc">"If it comes in a box, we build it" — furniture &amp; flat-pack assembly.</div><div class="vc-phone">508-542-8995</div></div>
+        <div class="vendor-card"><div class="vc-name">Steko Masonry &amp; Construction</div><div class="vc-phone">774-722-0732</div><div class="vc-web">stekoconstruction.com</div></div>
+        <div class="vendor-card"><div class="vc-name">Vision Construction &amp; Design</div><div class="vc-loc">50 GAR Hwy, Swansea, MA 02777</div><div class="vc-desc">Custom homes &amp; remodeling.</div><div class="vc-phone">508-840-0189</div><div class="vc-web">visioncd.net</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LANDSCAPING -->
+  <div class="cat-section" data-cat="landscaping">
+    <div class="cat-header cat-header-mid">
+      <div class="cat-header-left"><span class="cat-header-emoji">🌿</span><span class="cat-header-name">Landscaping &amp; Exterior</span></div>
+      <span class="cat-header-count">8 vendors</span>
+    </div>
+    <div class="cat-body">
+      <div class="vendor-grid">
+        <div class="vendor-card"><div class="vc-name">Kevin's Landscaping &amp; Excavating, LLC</div><div class="vc-referral">Contact via Scott for referral.</div></div>
+        <div class="vendor-card"><div class="vc-name">IGY6 INC <span style="font-size:9px;color:#B89D5A;">(Veteran-Owned)</span></div><div class="vc-desc">Landscaping, snow plowing, power washing, property maintenance.</div><div class="vc-web">facebook.com/IGY6INC</div></div>
+        <div class="vendor-card"><div class="vc-name">Lucky 13 Excavation</div><div class="vc-phone">774-226-6478</div><div class="vc-web">lucky13excavation.com</div></div>
+        <div class="vendor-card"><div class="vc-name">Russo's Property Maintenance</div><div class="vc-desc">Landscaping, fence installs, junk removal, painting.</div><div class="vc-phone">857-244-9298</div></div>
+        <div class="vendor-card"><div class="vc-name">Silver City Tree</div><div class="vc-loc">Taunton, MA</div><div class="vc-desc">Tree removal, pruning, stump grinding.</div><div class="vc-phone">774-360-9229</div><div class="vc-web">silvercitytreeservicema.com</div></div>
+        <div class="vendor-card"><div class="vc-name">Stump2Dust</div><div class="vc-desc">Stump removal specialist.</div><div class="vc-phone">401-536-0403</div><div class="vc-web">stump2dust.com</div></div>
+        <div class="vendor-card"><div class="vc-name">Untamable Hardscapes LLC</div><div class="vc-phone">774-264-3747</div></div>
+        <div class="vendor-card"><div class="vc-name">Victor and D Landscaping</div><div class="vc-loc">Westport, MA</div><div class="vc-phone">401-481-7924</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOVING & STORAGE -->
+  <div class="cat-section" data-cat="other">
+    <div class="cat-header cat-header-dark">
+      <div class="cat-header-left"><span class="cat-header-emoji">🚚</span><span class="cat-header-name">Moving &amp; Storage</span></div>
+      <span class="cat-header-count">1 vendor</span>
+    </div>
+    <div class="cat-body">
+      <div class="vendor-grid">
+        <div class="vendor-card"><div class="vc-name">New Generation Moving and Storage LLC</div><div class="vc-phone">Cell: 508-468-8032 · Office: 774-215-5099</div><div class="vc-web">newgenerationmovers.com</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAINTING -->
+  <div class="cat-section" data-cat="other">
+    <div class="cat-header cat-header-mid">
+      <div class="cat-header-left"><span class="cat-header-emoji">🎨</span><span class="cat-header-name">Painting</span></div>
+      <span class="cat-header-count">2 vendors</span>
+    </div>
+    <div class="cat-body">
+      <div class="vendor-grid">
+        <div class="vendor-card"><div class="vc-name">Richard's Painting of Swansea</div><div class="vc-loc">89 Clark Lane, Swansea, MA 02777</div><div class="vc-phone">401-258-6963</div><div class="vc-web">richardspainting.net</div></div>
+        <div class="vendor-card"><div class="vc-name">Antonio E. Rodrigues Jr.</div><div class="vc-referral">Contact via Scott for referral.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLUMBING & HVAC -->
+  <div class="cat-section" data-cat="plumbing">
+    <div class="cat-header cat-header-dark">
+      <div class="cat-header-left"><span class="cat-header-emoji">🔧</span><span class="cat-header-name">Plumbing &amp; HVAC</span></div>
+      <span class="cat-header-count">12 vendors</span>
+    </div>
+    <div class="cat-body">
+      <div class="vendor-grid">
+        <div class="vendor-card"><div class="vc-name">AES Plumbing and Heating</div><div class="vc-loc">40 Leona's Lane, Taunton, MA</div><div class="vc-phone">(774) 260-7050</div></div>
+        <div class="vendor-card"><div class="vc-name">Faithful Plumbing and Heating</div><div class="vc-loc">Dighton, MA</div><div class="vc-phone">508-567-7678</div><div class="vc-web">faithfulplumbingandheating.com</div></div>
+        <div class="vendor-card"><div class="vc-name">Greenpoint Plumbing &amp; Heating</div><div class="vc-loc">104 Harrison Ave, Somerset, MA 02726</div><div class="vc-phone">(508) 672-6704</div><div class="vc-web">greenpointplumbing.com</div></div>
+        <div class="vendor-card"><div class="vc-name">JUST Plumbing</div><div class="vc-phone">(508) 617-6182</div><div class="vc-web">justplumbingco.com</div></div>
+        <div class="vendor-card"><div class="vc-name">Nunnelly Heating &amp; Cooling LLC</div><div class="vc-loc">150 Lafayette St, Somerset, MA 02726</div><div class="vc-phone">774-488-8279</div></div>
+        <div class="vendor-card"><div class="vc-name">Pereira Plumbing</div><div class="vc-loc">362 Lucy Little Rd, Dartmouth, MA 02747</div><div class="vc-phone">(508) 509-8983</div><div class="vc-web">pereiraplumbinginc.com</div></div>
+        <div class="vendor-card"><div class="vc-name">Platinum Home Services</div><div class="vc-loc">PO Box 9263, Fall River, MA 02720</div><div class="vc-desc">Contact: Jeffrey Henson (President) or Christine Lavoie (Office).</div><div class="vc-phone">(508) 674-6935</div><div class="vc-web">platinumontime.com</div></div>
+        <div class="vendor-card"><div class="vc-name">Prodigy HVAC Services, LLC</div><div class="vc-loc">Contact: Jayden Fitzgerald</div><div class="vc-phone">774-301-3042</div></div>
+        <div class="vendor-card"><div class="vc-name">Service Professionals</div><div class="vc-desc">Plumbing / Heating / A/C · Lic #15287</div><div class="vc-phone">(508) 452-6668</div><div class="vc-web">theserviceprofessionals.com</div></div>
+        <div class="vendor-card"><div class="vc-name">Silver City Mechanical</div><div class="vc-loc">Taunton, MA 02780</div><div class="vc-phone">508-974-2106</div><div class="vc-web">silvercitymechanical.com</div></div>
+        <div class="vendor-card"><div class="vc-name">Souza's Heating &amp; Cooling</div><div class="vc-loc">Somerset, MA</div><div class="vc-phone">508-215-9307</div></div>
+        <div class="vendor-card"><div class="vc-name">TopKnotch HVAC</div><div class="vc-loc">Contact: Mike Simeone</div><div class="vc-phone">781-588-6365</div><div class="vc-web">topknotch-hvac.com</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRESSURE WASHING -->
+  <div class="cat-section" data-cat="other">
+    <div class="cat-header cat-header-mid">
+      <div class="cat-header-left"><span class="cat-header-emoji">💦</span><span class="cat-header-name">Pressure Washing</span></div>
+      <span class="cat-header-count">3 vendors</span>
+    </div>
+    <div class="cat-body">
+      <div class="vendor-grid">
+        <div class="vendor-card"><div class="vc-name">Next Level Pressure Washing</div><div class="vc-loc">875 State Rd, Westport, MA 02790</div><div class="vc-phone">774-365-0218</div><div class="vc-web">nextlevelwashing.com</div></div>
+        <div class="vendor-card"><div class="vc-name">Packard Power Washing LLC</div><div class="vc-loc">67 East St, East Bridgewater, MA 02333</div><div class="vc-phone">774-226-5906</div><div class="vc-web">packardpowerwash.com</div></div>
+        <div class="vendor-card"><div class="vc-name">Supreme Rinse Pressure Washing</div><div class="vc-loc">5 Homestead Rd, Middleboro, MA 02346</div><div class="vc-referral">Contact via Facebook.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEPTIC & TITLE V -->
+  <div class="cat-section" data-cat="other">
+    <div class="cat-header cat-header-dark">
+      <div class="cat-header-left"><span class="cat-header-emoji">🔩</span><span class="cat-header-name">Septic &amp; Title V</span></div>
+      <span class="cat-header-count">1 vendor</span>
+    </div>
+    <div class="cat-body">
+      <div class="vendor-grid">
+        <div class="vendor-card"><div class="vc-name">Town Sanitation – Title V</div><div class="vc-loc">400R Taunton Ave, Seekonk, MA 02771 · Contact: Riley Munson</div><div class="vc-phone">(508) 336-3555</div><div class="vc-email">townsanitation@verizon.net</div><div class="vc-web">townsanitation.com</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOLAR -->
+  <div class="cat-section" data-cat="other">
+    <div class="cat-header cat-header-mid">
+      <div class="cat-header-left"><span class="cat-header-emoji">☀️</span><span class="cat-header-name">Solar</span></div>
+      <span class="cat-header-count">1 vendor</span>
+    </div>
+    <div class="cat-body">
+      <div class="vendor-grid">
+        <div class="vendor-card"><div class="vc-name">Isaksen Solar</div><div class="vc-loc">Serving MA &amp; RI</div><div class="vc-desc">Residential &amp; commercial solar.</div><div class="vc-phone">508-415-2933</div><div class="vc-email">jrichard@isaksensolar.com</div><div class="vc-web">isaksensolar.com</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MORTGAGE PARTNERS & TITLE/CLOSING -->
+  <div class="cat-section" data-cat="partners">
+    <div class="cat-header cat-header-dark">
+      <div class="cat-header-left"><span class="cat-header-emoji">🤝</span><span class="cat-header-name">Mortgage Partners &amp; Title / Closing</span></div>
+      <span class="cat-header-count">4 contacts</span>
+    </div>
+    <div class="cat-body">
+      <div class="partner-grid">
+        <div class="partner-card">
+          <div class="pc-badge">Mortgage Partner</div>
+          <div class="pc-name">Michael Quin</div>
+          <div class="pc-title">Branch Manager · NorthPointe Bank · NMLS# 16162</div>
+          <div class="vc-phone">Mobile: 781-636-8874</div>
+          <div class="vc-email">Michael.Quin@northpointe.com</div>
+          <div class="vc-web">northpointe.com</div>
+          <div class="pc-fine">Apply: myloan.northpointe.com · Member FDIC · Equal Housing Lender</div>
+        </div>
+        <div class="partner-card">
+          <div class="pc-badge">Mortgage Partner</div>
+          <div class="pc-name">Paul Salcone</div>
+          <div class="pc-title">Sales Manager / Loan Officer · NorthPointe Bank · NMLS# 1096590</div>
+          <div class="vc-phone">Phone: (401) 419-9291 · Fax: (401) 633-7541</div>
+          <div class="vc-email">paul.salcone@northpointe.com</div>
+          <div class="vc-web">northpointe.com/paul-salcone</div>
+          <div class="pc-fine">Apply: myloan.northpointe.com · Member FDIC · Equal Housing Lender</div>
+        </div>
+        <div class="partner-card">
+          <div class="pc-badge">Title &amp; Closing</div>
+          <div class="pc-name">Daniel S. Balkun</div>
+          <div class="pc-title">President · Balkun Title &amp; Closing</div>
+          <div class="vc-phone">Office: 401-369-9100 · Cell: 401-230-0432 · Fax: 401-369-9099</div>
+          <div class="vc-email">dan@balkuntc.com</div>
+          <div class="pc-address">
+            <div class="pc-addr-label">Warwick, RI Office</div>
+            33 College Hill Rd, Suite 25E<br/>Warwick, RI 02886
+          </div>
+        </div>
+        <div class="partner-card">
+          <div class="pc-badge">Title &amp; Closing / Attorney</div>
+          <div class="pc-name">Sara Rasmussen, <em>Esq.</em></div>
+          <div class="pc-title">Balkun Title &amp; Closing · Rasmussen Law</div>
+          <div class="vc-phone">Office: 401-369-9100 · Cell: 774-488-9633 · Fax: 401-369-9099</div>
+          <div class="vc-email">sara@balkuntc.com · titleorders@balkuntc.com · closings@balkuntc.com</div>
+          <div class="pc-addr-grid">
+            <div class="pc-address">
+              <div class="pc-addr-label">Fall River, MA</div>
+              45 N. Main St, Suite 501<br/>Fall River, MA 02720
+            </div>
+            <div class="pc-address">
+              <div class="pc-addr-label">Warwick, RI</div>
+              Warwick, RI 02886
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="f-name">Scott Steele</div>
+      <div class="f-title">CEO · Operating Principal · Realtor</div>
+      <div class="f-contact">508.813.9267 · Ssteelere@KW.com · Licensed in MA &amp; RI</div>
+    </div>
+    <div class="footer-logo">
+      <img src="04B81FDE-4445-4B67-87D6-96BE098A783D.jpg" alt="The Ponte Group" onerror="this.style.display='none'"/>
+    </div>
+  </div>
+  <div class="footer-copy">
+    <span>© 2026 Scott Steele · Licensed in MA &amp; RI</span>
+    <span>Powered by The Ponte Group · Keller Williams South Watuppa</span>
+  </div>
+</footer>
+
+<script>
+function fv(cat, btn) {
+  document.querySelectorAll('.cat-section').forEach(function(s) {
+    s.style.display = (cat === 'all' || s.getAttribute('data-cat') === cat) ? 'block' : 'none';
+  });
+  document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>

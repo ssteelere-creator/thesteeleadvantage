@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>SE Massachusetts & RI Real Estate Markets | Scott Steele</title>
+<meta name="description" content="Community guides for 16 markets across southeastern Massachusetts and Rhode Island — from Fall River and New Bedford to Westport, Bristol, and Tiverton."/>
+<link rel="stylesheet" href="/assets/css/brand.css"/>
+<style>
+.hero{background:#050A14;padding:80px 40px 72px;}
+.hero-title{font-family:Georgia,serif;font-size:58px;color:#FAF8F4;line-height:.9;letter-spacing:-2px;font-style:italic;margin-bottom:14px;}
+.hero-title span{font-style:normal;color:#B89D5A;}
+.filters{display:flex;gap:0;margin-bottom:40px;border-bottom:1px solid #1F3552;}
+.filter-btn{background:none;border:none;border-bottom:2px solid transparent;color:#6A8AA8;padding:12px 20px;font-size:9px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:inherit;margin-bottom:-1px;}
+.filter-btn.active{color:#FAF8F4;border-bottom-color:#B89D5A;}
+.markets-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+.market-card{background:#0D1A2E;border:1px solid #1F3552;padding:28px 24px;cursor:pointer;text-decoration:none;display:block;}
+.market-card:hover{background:#111F35;}
+.market-card.luxury{background:#0A0A06;border-color:#2A2218;}
+.market-card.luxury:hover{background:#0F0F08;}
+.mc-badge{display:inline-block;padding:2px 8px;font-size:7px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:12px;}
+.mc-badge-primary{background:#B89D5A;color:#050A14;}
+.mc-badge-luxury{background:rgba(184,157,90,0.15);color:#B89D5A;border:1px solid rgba(184,157,90,0.3);}
+.mc-state{font-size:8px;color:#5A7A99;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
+.mc-name{font-family:Georgia,serif;font-size:22px;color:#FAF8F4;margin-bottom:14px;line-height:1.1;}
+.mc-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;}
+.mc-stat-val{font-family:Georgia,serif;font-size:16px;color:#FAF8F4;}
+.mc-stat-label{font-size:8px;color:#5A7A99;letter-spacing:1.5px;text-transform:uppercase;}
+.mc-link{display:flex;align-items:center;gap:8px;margin-top:4px;}
+.mc-link-line{width:16px;height:1px;background:#B89D5A;}
+.mc-link-text{font-size:8px;color:#B89D5A;letter-spacing:2px;text-transform:uppercase;}
+.pulse-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;}
+.pulse-card{background:#0D1A2E;border:1px solid #1F3552;padding:24px;}
+.pulse-val{font-family:Georgia,serif;font-size:32px;color:#B89D5A;margin-bottom:4px;}
+.pulse-label{font-size:9px;color:#5A7A99;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
+.pulse-body{font-size:16px;color:#9AB0C8;line-height:1.7;font-weight:300;}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<div class="breadcrumb"><span class="bc-dim">Home</span><span class="bc-sep">/</span><span class="bc-active">Markets</span></div>
+
+<div class="hero">
+  <div class="eyebrow">SE Massachusetts & Rhode Island</div>
+  <div class="hero-title">The markets<br>I know <span>best.</span></div>
+  
+  <div class="body-dark" style="max-width:580px;margin:20px 0 36px;">16 community guides across Bristol County MA, Plymouth County MA, and Providence and Bristol County RI. Real market intelligence — not website filler. Every town guide is built from actual transaction experience, not just MLS data.</div>
+</div>
+
+<div class="section-dark" style="padding-top:0;">
+  <div class="filters" id="filters">
+    <button class="filter-btn active" onclick="filterMarkets('all',this)">All markets</button>
+    <button class="filter-btn" onclick="filterMarkets('ma',this)">SE Massachusetts</button>
+    <button class="filter-btn" onclick="filterMarkets('ri',this)">Rhode Island</button>
+    <button class="filter-btn" onclick="filterMarkets('luxury',this)">Luxury markets</button>
+  </div>
+  <div class="markets-grid" id="markets-grid">
+    <a href="/markets/fall-river" class="market-card" data-state="ma" data-type="primary">
+      <span class="mc-badge mc-badge-primary">Primary</span>
+      <div class="mc-state">Massachusetts</div>
+      <div class="mc-name">Fall River</div>
+      <div class="mc-stats">
+        <div><div class="mc-stat-val">$385K</div><div class="mc-stat-label">Median</div></div>
+        <div><div class="mc-stat-val">18</div><div class="mc-stat-label">Avg DOM</div></div>
+      </div>
+      <div class="mc-link"><div class="mc-link-line"></div><div class="mc-link-text">View guide</div></div>
+      <a href="https://ssteele.pontegroupne.com/property-search/results/#listtypeinclude_Residential/city_Fall-River/state_MA/" target="_blank" style="display:flex;align-items:center;gap:8px;margin-top:8px;text-decoration:none;"><div class="mc-link-line"></div><div class="mc-link-text">Search listings</div></a>
+    </a>
+    <a href="/markets/new-bedford" class="market-card" data-state="ma" data-type="primary">
+      <span class="mc-badge mc-badge-primary">Primary</span>
+      <div class="mc-state">Massachusetts</div>
+      <div class="mc-name">New Bedford</div>
+      <div class="mc-stats">
+        <div><div class="mc-stat-val">$360K</div><div class="mc-stat-label">Median</div></div>
+        <div><div class="mc-stat-val">14</div><div class="mc-stat-label">Avg DOM</div></div>
+      </div>
+      <div class="mc-link"><div class="mc-link-line"></div><div class="mc-link-text">View guide</div></div>
+      <a href="https://ssteele.pontegroupne.com/property-search/results/#listtypeinclude_Residential/city_New-Bedford/state_MA/" target="_blank" style="display:flex;align-items:center;gap:8px;margin-top:8px;text-decoration:none;"><div class="mc-link-line"></div><div class="mc-link-text">Search listings</div></a>
+    </a>
+    <a href="/markets/dartmouth" class="market-card luxury" data-state="ma" data-type="luxury">
+      <span class="mc-badge mc-badge-luxury">Luxury</span>
+      <div class="mc-state">Massachusetts</div>
+      <div class="mc-name">Dartmouth</div>
+      <div class="mc-stats">
+        <div><div class="mc-stat-val">$590K</div><div class="mc-stat-label">Median</div></div>
+        <div><div class="mc-stat-val">12</div><div class="mc-stat-label">Avg DOM</div></div>
+      </div>
+      <div class="mc-link"><div class="mc-link-line"></div><div class="mc-link-text">View guide</div></div>
+      <a href="https://ssteele.pontegroupne.com/property-search/results/#listtypeinclude_Residential/city_Dartmouth/state_MA/" target="_blank" style="display:flex;align-items:center;gap:8px;margin-top:8px;text-decoration:none;"><div class="mc-link-line"></div><div class="mc-link-text">Search listings</div></a>
+    </a>
+    <a href="/markets/westport" class="market-card luxury" data-state="ma" data-type="luxury">
+      <span class="mc-badge mc-badge-luxury">Luxury</span>
+      <div class="mc-state">Massachusetts</div>
+      <div class="mc-name">Westport</div>
+      <div class="mc-stats">
+        <div><div class="mc-stat-val">$680K</div><div class="mc-stat-label">Median</div></div>
+        <div><div class="mc-stat-val">22</div><div class="mc-stat-label">Avg DOM</div></div>
+      </div>
+      <div class="mc-link"><div class="mc-link-line"></div><div class="mc-link-text">View guide</div></div>
+      <a href="https://ssteele.pontegroupne.com/property-search/results/#listtypeinclude_Residential/city_Westport/state_MA/pricemin_750000/" target="_blank" style="display:flex;align-items:center;gap:8px;margin-top:8px;text-decoration:none;"><div class="mc-link-line"></div><div class="mc-link-text">Search listings</div></a>
+    </a>
+    <a href="/markets/taunton" class="market-card" data-state="ma" data-type="primary">
+      <span class="mc-badge mc-badge-primary">Primary</span>
+      <div class="mc-state">Massachusetts</div>
+      <div class="mc-name">Taunton</div>
+      <div class="mc-stats">
+        <div><div class="mc-stat-val">$420K</div><div class="mc-stat-label">Median</div></div>
+        <div><div class="mc-stat-val">15</div><div class="mc-stat-label">Avg DOM</div></div>
+      </div>
+      <div class="mc-link"><div class="mc-link-line"></div><div class="mc-link-text">View guide</div></div>
+      <a href="https://ssteele.pontegroupne.com/property-search/results/#listtypeinclude_Residential/city_Taunton/state_MA/" target="_blank" style="display:flex;align-items:center;gap:8px;margin-top:8px;text-decoration:none;"><div class="mc-link-line"></div><div class="mc-link-text">Search listings</div></a>
+    </a>
+    <a href="/markets/freetown" class="market-card" data-state="ma" data-type="primary">
+      <span class="mc-badge mc-badge-primary">Primary</span>
+      <div class="mc-state">Massachusetts</div>
+      <div class="mc-name">Freetown</div>
+      <div class="mc-stats">
+        <div><div class="mc-stat-val">$510K</div><div class="mc-stat-label">Median</div></div>
+        <div><div class="mc-stat-val">11</div><div class="mc-stat-label">Avg DOM</div></div>
+      </div>
+      <div class="mc-link"><div class="mc-link-line"></div><div class="mc-link-text">View guide</div></div>
+      <a href="https://ssteele.pontegroupne.com/property-search/results/#listtypeinclude_Residential/city_Freetown/state_MA/" target="_blank" style="display:flex;align-items:center;gap:8px;margin-top:8px;text-decoration:none;"><div class="mc-link-line"></div><div class="mc-link-text">Search listings</div></a>
+    </a>
+    <a href="/markets/swansea" class="market-card" data-state="ma" data-type="primary">
+      <span class="mc-badge mc-badge-primary">Primary</span>
+      <div class="mc-state">Massachusetts</div>
+      <div class="mc-name">Swansea</div>
+      <div class="mc-stats">
+        <div><div class="mc-stat-val">$475K</div><div class="mc-stat-label">Median</div></div>
+        <div><div class="mc-stat-val">9</div><div class="mc-stat-label">Avg DOM</div></div>
+      </div>
+      <div class="mc-link"><div class="mc-link-line"></div><div class="mc-link-text">View guide</div></div>
+      <a href="https://ssteele.pontegroupne.com/property-search/results/#listtypeinclude_Residential/city_Swansea/state_MA/" target="_blank" style="display:flex;align-items:center;gap:8px;margin-top:8px;text-decoration:none;"><div class="mc-link-line"></div><div class="mc-link-text">Search listings</div></a>
+    </a>
+    <a href="/markets/somerset" class="market-card" data-state="ma" data-type="primary">
+      <span class="mc-badge mc-badge-primary">Primary</span>
+      <div class="mc-state">Massachusetts</div>
+      <div class="mc-name">Somerset</div>
+      <div class="mc-stats">
+        <div><div class="mc-stat-val">$445K</div><div class="mc-stat-label">Median</div></div>
+        <div><div class="mc-stat-val">13</div><div class="mc-stat-label">Avg DOM</div></div>
+      </div>
+      <div class="mc-link"><div class="mc-link-line"></div><div class="mc-link-text">View guide</div></div>
+      <a href="https://ssteele.pontegroupne.com/property-search/results/#listtypeinclude_Residential/city_Somerset/state_MA/" target="_blank" style="display:flex;align-items:center;gap:8px;margin-top:8px;text-decoration:none;"><div class="mc-link-line"></div><div class="mc-link-text">Search listings</div></a>
+    </a>
+    <a href="/markets/attleboro" class="market-card" data-state="ma" data-type="primary">
+      <span class="mc-badge mc-badge-primary">Primary</span>
+      <div class="mc-state">Massachusetts</div>
+      <div class="mc-name">Attleboro</div>
+      <div class="mc-stats">
+        <div><div class="mc-stat-val">$450K</div><div class="mc-stat-label">Median</div></div>
+        <div><div class="mc-stat-val">16</div><div class="mc-stat-label">Avg DOM</div></div>
+      </div>
+      <div class="mc-link"><div class="mc-link-line"></div><div class="mc-link-text">View guide</div></div>
+      <a href="https://ssteele.pontegroupne.com/property-search/results/#listtypeinclude_Residential/city_Attleboro/state_MA/" target="_blank" style="display:flex;align-items:center;gap:8px;margin-top:8px;text-decoration:none;"><div class="mc-link-line"></div><div class="mc-link-text">Search listings</div></a>
+    </a>
+    <a href="/markets/fairhaven" class="market-card" data-state="ma" data-type="primary">
+      <span class="mc-badge mc-badge-primary">Primary</span>
+      <div class="mc-state">Massachusetts</div>
+      <div class="mc-name">Fairhaven</div>
+      <div class="mc-stats">
+        <div><div class="mc-stat-val">$395K</div><div class="mc-stat-label">Median</div></div>
+        <div><div class="mc-stat-val">14</div><div class="mc-stat-label">Avg DOM</div></div>
+      </div>
+      <div class="mc-link"><div class="mc-link-line"></div><div class="mc-link-text">View guide</div></div>
+      <a href="https://ssteele.pontegroupne.com/property-search/results/#listtypeinclude_Residential/city_Fairhaven/state_MA/" target="_blank" style="display:flex;align-items:center;gap:8px;margin-top:8px;text-decoration:none;"><div class="mc-link-line"></div><div class="mc-link-text">Search listings</div></a>
+    </a>
+    <a href="/markets/rehoboth" class="market-card" data-state="ma" data-type="primary">
+      <span class="mc-badge mc-badge-primary">Primary</span>
+      <div class="mc-state">Massachusetts</div>
+      <div class="mc-name">Rehoboth</div>
+      <div class="mc-stats">
+        <div><div class="mc-stat-val">$545K</div><div class="mc-stat-label">Median</div></div>
+        <div><div class="mc-stat-val">19</div><div class="mc-stat-label">Avg DOM</div></div>
+      </div>
+      <div class="mc-link"><div class="mc-link-line"></div><div class="mc-link-text">View guide</div></div>
+      <a href="https://ssteele.pontegroupne.com/property-search/results/#listtypeinclude_Residential/city_Rehoboth/state_MA/" target="_blank" style="display:flex;align-items:center;gap:8px;margin-top:8px;text-decoration:none;"><div class="mc-link-line"></div><div class="mc-link-text">Search listings</div></a>
+    </a>
+    <a href="/markets/dighton" class="market-card" data-state="ma" data-type="primary">
+      <span class="mc-badge mc-badge-primary">Primary</span>
+      <div class="mc-state">Massachusetts</div>
+      <div class="mc-name">Dighton</div>
+      <div class="mc-stats">
+        <div><div class="mc-stat-val">$460K</div><div class="mc-stat-label">Median</div></div>
+        <div><div class="mc-stat-val">10</div><div class="mc-stat-label">Avg DOM</div></div>
+      </div>
+      <div class="mc-link"><div class="mc-link-line"></div><div class="mc-link-text">View guide</div></div>
+      <a href="https://ssteele.pontegroupne.com/property-search/results/#listtypeinclude_Residential/city_Dighton/state_MA/" target="_blank" style="display:flex;align-items:center;gap:8px;margin-top:8px;text-decoration:none;"><div class="mc-link-line"></div><div class="mc-link-text">Search listings</div></a>
+    </a>
+    <a href="/markets/providence" class="market-card" data-state="ri" data-type="primary">
+      <span class="mc-badge mc-badge-primary">Primary</span>
+      <div class="mc-state">Rhode Island</div>
+      <div class="mc-name">Providence</div>
+      <div class="mc-stats">
+        <div><div class="mc-stat-val">$410K</div><div class="mc-stat-label">Median</div></div>
+        <div><div class="mc-stat-val">12</div><div class="mc-stat-label">Avg DOM</div></div>
+      </div>
+      <div class="mc-link"><div class="mc-link-line"></div><div class="mc-link-text">View guide</div></div>
+      <a href="https://ssteele.pontegroupne.com/property-search/results/#listtypeinclude_Residential/city_Providence/state_RI/" target="_blank" style="display:flex;align-items:center;gap:8px;margin-top:8px;text-decoration:none;"><div class="mc-link-line"></div><div class="mc-link-text">Search listings</div></a>
+    </a>
+    <a href="/markets/tiverton" class="market-card luxury" data-state="ri" data-type="luxury">
+      <span class="mc-badge mc-badge-luxury">Luxury</span>
+      <div class="mc-state">Rhode Island</div>
+      <div class="mc-name">Tiverton</div>
+      <div class="mc-stats">
+        <div><div class="mc-stat-val">$620K</div><div class="mc-stat-label">Median</div></div>
+        <div><div class="mc-stat-val">24</div><div class="mc-stat-label">Avg DOM</div></div>
+      </div>
+      <div class="mc-link"><div class="mc-link-line"></div><div class="mc-link-text">View guide</div></div>
+      <a href="https://ssteele.pontegroupne.com/property-search/results/#listtypeinclude_Residential/city_Tiverton/state_RI/pricemin_600000/" target="_blank" style="display:flex;align-items:center;gap:8px;margin-top:8px;text-decoration:none;"><div class="mc-link-line"></div><div class="mc-link-text">Search listings</div></a>
+    </a>
+    <a href="/markets/warren" class="market-card" data-state="ri" data-type="primary">
+      <span class="mc-badge mc-badge-primary">Primary</span>
+      <div class="mc-state">Rhode Island</div>
+      <div class="mc-name">Warren</div>
+      <div class="mc-stats">
+        <div><div class="mc-stat-val">$430K</div><div class="mc-stat-label">Median</div></div>
+        <div><div class="mc-stat-val">11</div><div class="mc-stat-label">Avg DOM</div></div>
+      </div>
+      <div class="mc-link"><div class="mc-link-line"></div><div class="mc-link-text">View guide</div></div>
+      <a href="https://ssteele.pontegroupne.com/property-search/results/#listtypeinclude_Residential/city_Warren/state_RI/" target="_blank" style="display:flex;align-items:center;gap:8px;margin-top:8px;text-decoration:none;"><div class="mc-link-line"></div><div class="mc-link-text">Search listings</div></a>
+    </a>
+    <a href="/markets/bristol" class="market-card luxury" data-state="ri" data-type="luxury">
+      <span class="mc-badge mc-badge-luxury">Luxury</span>
+      <div class="mc-state">Rhode Island</div>
+      <div class="mc-name">Bristol</div>
+      <div class="mc-stats">
+        <div><div class="mc-stat-val">$695K</div><div class="mc-stat-label">Median</div></div>
+        <div><div class="mc-stat-val">21</div><div class="mc-stat-label">Avg DOM</div></div>
+      </div>
+      <div class="mc-link"><div class="mc-link-line"></div><div class="mc-link-text">View guide</div></div>
+      <a href="https://ssteele.pontegroupne.com/property-search/results/#listtypeinclude_Residential/city_Bristol/state_RI/pricemin_650000/" target="_blank" style="display:flex;align-items:center;gap:8px;margin-top:8px;text-decoration:none;"><div class="mc-link-line"></div><div class="mc-link-text">Search listings</div></a>
+    </a>
+  </div>
+
+  <!-- MARKET PULSE -->
+  <div style="margin-top:64px;">
+    <div class="eyebrow">Market pulse</div>
+    <div class="section-title-dark" style="margin-bottom:32px;">What the numbers <span>are saying right now.</span></div>
+    <div class="pulse-grid">
+      <div class="pulse-card">
+        <div class="pulse-val">11 days</div>
+        <div class="pulse-label">Fastest market — Swansea MA</div>
+        <div class="pulse-body">The MA/RI border town continues to be the region's fastest-moving market. Buyers who aren't pre-approved are consistently losing out to buyers who are.</div>
+      </div>
+      <div class="pulse-card">
+        <div class="pulse-val">↑12%</div>
+        <div class="pulse-label">Strongest appreciation — Tiverton RI</div>
+        <div class="pulse-body">Tiverton is the RI market discovering itself. Newport County positioning at sub-Newport pricing has created sustained demand and the region's strongest YOY appreciation.</div>
+      </div>
+      <div class="pulse-card">
+        <div class="pulse-val">$680K</div>
+        <div class="pulse-label">Highest median — Westport MA</div>
+        <div class="pulse-body">Westport continues to be the SE Mass luxury anchor. Waterfront estates, farm properties, and private beach access at price points that shock buyers from more saturated coastal markets.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MARKET REPORT FORM -->
+<div class="section-light">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+    <div>
+      <div class="eyebrow">Stay informed</div>
+      <div class="section-title-light">Monthly market intelligence — <span>free.</span></div>
+      <div class="body-light" style="margin:16px 0;">I send a monthly market report covering median prices, DOM trends, and notable activity across all 16 markets. Buyers, sellers, and investors use it to time their decisions. No spam — just data.</div>
+    </div>
+    <div style="background:#0D1A2E;border:1px solid #1F3552;padding:32px;"><form netlify action="/thank-you" name="market-report" method="POST"><input type="hidden" name="form-name" value="market-report"/>
+      <div class="form-label">Get the monthly market report</div>
+      <div class="form-grid-2">
+        <input class="form-input" name="first_name" placeholder="First name"/>
+        <input class="form-input" name="last_name" placeholder="Last name"/>
+      </div>
+      <div class="form-row"><input class="form-input" name="email" placeholder="Email"/></div>
+      <div class="form-row">
+        <select class="form-select">
+          <option>I'm a...</option>
+          <option>Homeowner / potential seller</option>
+          <option>Active buyer</option>
+          <option>Real estate investor</option>
+          <option>Just staying informed</option>
+        </select>
+      </div>
+      <button type="submit" class="form-submit">Send me the report</button>
+      <div class="form-note">Monthly. No spam. Unsubscribe any time.</div></form>
+    </div>
+  </div>
+</div>
+
+<div id="footer-placeholder"></div>
+<script src="/assets/js/brand.js"></script>
+<script>
+initPage('markets');
+function filterMarkets(type, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.market-card').forEach(card => {
+    if (type === 'all') { card.style.display = 'block'; return; }
+    if (type === 'luxury') { card.style.display = card.dataset.type === 'luxury' ? 'block' : 'none'; return; }
+    card.style.display = card.dataset.state === type ? 'block' : 'none';
+  });
+}
+</script>
+</body>
+</html>

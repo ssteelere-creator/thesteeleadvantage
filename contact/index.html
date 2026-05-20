@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Contact Scott Steele | Realtor, Fall River MA</title>
+<meta name="description" content="Reach Scott Steele directly — 508.813.9267 or Ssteelere@KW.com. Seller consultations, buyer searches, agent inquiries, and general questions. Same-day response."/>
+<link rel="stylesheet" href="/assets/css/brand.css"/>
+<style>
+.hero{background:#050A14;padding:80px 40px 72px;}
+.hero-title{font-family:Georgia,serif;font-size:56px;color:#FAF8F4;line-height:.9;letter-spacing:-2px;font-style:italic;margin-bottom:14px;}
+.hero-title span{font-style:normal;color:#B89D5A;}
+.path-selector{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin:36px 0;}
+.path-btn{background:#0D1A2E;border:1px solid #1F3552;border-bottom:2px solid transparent;padding:20px;text-align:left;cursor:pointer;font-family:inherit;}
+.path-btn:hover{background:#111F35;}
+.path-btn.active{border-bottom-color:#B89D5A;}
+.path-btn-label{font-size:8px;color:#5A7A99;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
+.path-btn-title{font-family:Georgia,serif;font-size:16px;color:#FAF8F4;}
+.form-panel{display:none;}
+.form-panel.active{display:block;}
+.form-wrap{background:#0D1A2E;border:1px solid #1F3552;border-top:2px solid #B89D5A;padding:40px;}
+.commitment{background:#000;border:1px solid #1F3552;padding:28px;margin-bottom:24px;}
+.commitment-label{font-size:8px;color:#B89D5A;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;}
+.commitment-body{font-size:15px;color:#9AB0C8;line-height:1.7;font-weight:300;}
+.testimonial-small{background:#0D1A2E;border:1px solid #1F3552;border-left:3px solid #B89D5A;padding:24px;}
+.ts-quote{font-family:Georgia,serif;font-size:16px;color:#FAF8F4;font-style:italic;line-height:1.5;margin-bottom:12px;}
+.ts-attr{font-size:9px;color:#5A7A99;letter-spacing:2px;text-transform:uppercase;}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<div class="breadcrumb"><span class="bc-dim">Home</span><span class="bc-sep">/</span><span class="bc-active">Contact</span></div>
+
+<div class="hero">
+  <div class="eyebrow">Direct contact · Scott Steele</div>
+  <div class="hero-title">You're reaching<br>Scott <span>directly.</span></div>
+  
+  <div class="inline-rule"><div class="inline-rule-line"></div><div class="inline-rule-text">Same-day response · 508.813.9267 · Ssteelere@KW.com</div></div>
+  <div class="body-dark" style="max-width:580px;margin:20px 0 0;">This isn't a lead form that goes to an assistant. When you reach out through this page, it goes to me. I respond the same day — always. Tell me what you're working on and let's figure out the best way I can help.</div>
+
+  <div class="path-selector" id="path-selector">
+    <button class="path-btn active" onclick="showPath('seller',this)"><div class="path-btn-label">I'm a</div><div class="path-btn-title">Seller</div></button>
+    <button class="path-btn" onclick="showPath('buyer',this)"><div class="path-btn-label">I'm a</div><div class="path-btn-title">Buyer</div></button>
+    <button class="path-btn" onclick="showPath('agent',this)"><div class="path-btn-label">I'm an</div><div class="path-btn-title">Agent</div></button>
+    <button class="path-btn" onclick="showPath('general',this)"><div class="path-btn-label">I have a</div><div class="path-btn-title">General question</div></button>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:flex-start;">
+    <div>
+      <div id="form-seller" class="form-panel active">
+        <div class="form-wrap"><form netlify action="/thank-you" name="seller-consultation" method="POST"><input type="hidden" name="form-name" value="seller-consultation"/>
+          <div class="form-label">Seller consultation request</div>
+          <div class="form-grid-2"><input class="form-input" name="first_name" placeholder="First name"/><input class="form-input" name="last_name" placeholder="Last name"/></div>
+          <div class="form-row"><input class="form-input" name="property_address" placeholder="Property address"/></div>
+          <div class="form-row"><input class="form-input" name="email" placeholder="Email"/></div>
+          <div class="form-row"><input class="form-input" name="phone" placeholder="Phone"/></div>
+          <div class="form-row"><select class="form-select"><option>Selling timeline</option><option>Ready now</option><option>Within 3 months</option><option>Within 6 months</option><option>Just exploring</option></select></div>
+          <div class="form-row"><textarea class="form-textarea" name="notes" placeholder="Anything else I should know?"></textarea></div>
+          <button type="submit" class="form-submit">Request seller consultation</button>
+          <div class="form-note">You'll hear from Scott the same day.</div>
+        </form></div>
+      </div>
+      <div id="form-buyer" class="form-panel">
+        <div class="form-wrap"><form netlify action="/thank-you" name="buyer-search" method="POST"><input type="hidden" name="form-name" value="buyer-search"/>
+          <div class="form-label">Buyer search inquiry</div>
+          <div class="form-grid-2"><input class="form-input" name="first_name" placeholder="First name"/><input class="form-input" name="last_name" placeholder="Last name"/></div>
+          <div class="form-row"><input class="form-input" name="email" placeholder="Email"/></div>
+          <div class="form-row"><input class="form-input" name="phone" placeholder="Phone"/></div>
+          <div class="form-row"><select class="form-select"><option>Target market / town</option><option>Fall River, MA</option><option>New Bedford, MA</option><option>Dartmouth, MA</option><option>Westport, MA</option><option>Swansea, MA</option><option>Taunton, MA</option><option>Providence, RI</option><option>Tiverton, RI</option><option>Bristol, RI</option><option>Warren, RI</option><option>Multiple markets</option></select></div>
+          <div class="form-row"><select class="form-select"><option>Price range</option><option>Under $300K</option><option>$300–$400K</option><option>$400–$550K</option><option>$550–$750K</option><option>$750K+</option></select></div>
+          <div class="form-row"><select class="form-select"><option>Are you pre-approved?</option><option>Yes — ready to move quickly</option><option>No — need a lender recommendation</option><option>Cash buyer</option></select></div>
+          <button type="submit" class="form-submit">Start my buyer search</button>
+          <div class="form-note">You'll hear from Scott the same day.</div>
+        </form></div>
+      </div>
+      <div id="form-agent" class="form-panel">
+        <div class="form-wrap"><form netlify action="/thank-you" name="agent-inquiry" method="POST"><input type="hidden" name="form-name" value="agent-inquiry"/>
+          <div class="form-label">Agent inquiry — confidential</div>
+          <div class="form-grid-2"><input class="form-input" name="first_name" placeholder="First name"/><input class="form-input" name="last_name" placeholder="Last name"/></div>
+          <div class="form-row"><input class="form-input" name="phone" placeholder="Phone"/></div>
+          <div class="form-row"><input class="form-input" name="email" placeholder="Email"/></div>
+          <div class="form-row"><input class="form-input" name="current_brokerage" placeholder="Current brokerage (optional)"/></div>
+          <div class="form-row"><select class="form-select"><option>Annual volume</option><option>Under $2M</option><option>$2–$5M</option><option>$5–$10M</option><option>$10M+</option></select></div>
+          <div class="form-row"><textarea class="form-textarea" name="motivation" placeholder="What's driving your interest? (optional)"></textarea></div>
+          <button type="submit" class="form-submit">Submit confidential inquiry</button>
+          <div class="form-note">100% confidential. You'll hear from Scott personally.</div>
+        </form></div>
+      </div>
+      <div id="form-general" class="form-panel">
+        <div class="form-wrap"><form netlify action="/thank-you" name="general-inquiry" method="POST"><input type="hidden" name="form-name" value="general-inquiry"/>
+          <div class="form-label">General inquiry</div>
+          <div class="form-grid-2"><input class="form-input" name="first_name" placeholder="First name"/><input class="form-input" name="last_name" placeholder="Last name"/></div>
+          <div class="form-row"><input class="form-input" name="email" placeholder="Email"/></div>
+          <div class="form-row"><input class="form-input" name="phone" placeholder="Phone (optional)"/></div>
+          <div class="form-row"><textarea class="form-textarea" name="message" placeholder="What's on your mind?"></textarea></div>
+          <button type="submit" class="form-submit">Send message</button>
+          <div class="form-note">You'll hear from Scott the same day.</div>
+        </form></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="commitment" style="margin-bottom:20px;">
+        <div class="commitment-label">The response commitment</div>
+        <div class="commitment-body">Every message I receive gets a same-day response. Not a bot acknowledgment — a real reply from me. If you reach out on a Sunday evening, you'll hear back Sunday evening. That's how I operate.</div>
+      </div>
+      <div class="contact-strip" style="margin-bottom:20px;">
+        <div class="contact-row"><span class="contact-row-label">Call or text</span><span class="contact-row-val-gold">508.813.9267</span></div>
+        <div class="contact-row"><span class="contact-row-label">Email</span><span class="contact-row-val-gold">Ssteelere@KW.com</span></div>
+        <div class="contact-row"><span class="contact-row-label">Response time</span><span class="contact-row-val-white">Same day. Always.</span></div>
+        <div class="contact-row"><span class="contact-row-label">License</span><span class="contact-row-val-white">MA & RI</span></div>
+      </div>
+      <div class="testimonial-small">
+        <div class="ts-quote">"I texted Scott on a Sunday evening. Within 20 minutes he responded and by Monday morning he had three showings set up. That level of responsiveness is genuinely rare."</div>
+        <div class="ts-attr">— <span style="color:#B89D5A;">Verified buyer</span> · Fall River, MA</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="footer-placeholder"></div>
+<script src="/assets/js/brand.js"></script>
+<script>
+initPage('');
+function showPath(path, btn) {
+  document.querySelectorAll('.path-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.form-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('form-' + path).classList.add('active');
+}
+</script>
+</body>
+</html>

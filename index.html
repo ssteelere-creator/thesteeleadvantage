@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Scott Steele — Realtor | SE Massachusetts & Rhode Island</title>
+<meta name="description" content="Scott Steele, CEO at The Ponte Group, KW South Watuppa. 27 units, $13M+ volume, 102% list-to-sale. Serving Fall River, New Bedford, Dartmouth, Westport, and 17+ markets across MA and RI."/>
+<link rel="stylesheet" href="/assets/css/brand.css"/>
+<style>
+.hero{background:#050A14;min-height:92vh;display:grid;grid-template-columns:1fr 480px;align-items:center;padding:80px 40px;gap:60px;}
+.hero-eyebrow{font-size:8px;letter-spacing:5px;text-transform:uppercase;color:#B89D5A;margin-bottom:20px;}
+.hero-title{font-family:Georgia,serif;font-size:68px;color:#FAF8F4;line-height:.88;letter-spacing:-3px;font-style:italic;margin-bottom:14px;}
+.hero-title span{font-style:normal;color:#B89D5A;display:block;}
+.hero-subtitle{font-family:Georgia,serif;font-size:16px;color:#5A7A99;letter-spacing:1px;margin-bottom:28px;}
+.hero-body{font-size:16px;color:#9AB0C8;line-height:1.9;font-weight:300;max-width:500px;margin-bottom:36px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px;}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;border-top:1px solid #1F3552;padding-top:32px;}
+.hs{padding:16px 0;}
+.hs-val{font-family:Georgia,serif;font-size:24px;color:#FAF8F4;margin-bottom:4px;}
+.hs-gold{color:#B89D5A;}
+.hs-label{font-size:8px;color:#5A7A99;letter-spacing:2px;text-transform:uppercase;}
+.hero-img-wrap{position:relative;display:flex;align-items:flex-end;justify-content:center;}
+.hero-img-bg{width:420px;height:520px;background:linear-gradient(135deg,#0D1A2E 0%,#1F3552 100%);border:1px solid #1F3552;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.hero-img-placeholder{font-family:Georgia,serif;font-size:15px;color:#3A5A7A;letter-spacing:2px;text-transform:uppercase;text-align:center;padding:24px;}
+.hero-img-badge{position:absolute;bottom:24px;left:24px;right:24px;background:rgba(5,10,20,0.92);border:1px solid #1F3552;padding:16px 20px;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.hib-val{font-family:Georgia,serif;font-size:18px;color:#B89D5A;margin-bottom:2px;}
+.hib-label{font-size:8px;color:#5A7A99;letter-spacing:1.5px;text-transform:uppercase;}
+.stats-bar{background:#000;padding:24px 40px;display:grid;grid-template-columns:repeat(6,1fr);border-bottom:1px solid #1A1A1A;}
+.sbar-item{padding:16px 0;text-align:center;border-right:1px solid #1A1A1A;}
+.sbar-item:last-child{border-right:none;}
+.sbar-val{font-family:Georgia,serif;font-size:22px;color:#FAF8F4;margin-bottom:4px;}
+.sbar-label{font-size:7px;color:#5A7A99;letter-spacing:2px;text-transform:uppercase;}
+.paths{background:#FAF8F4;padding:80px 40px;}
+.paths-header{text-align:center;margin-bottom:56px;}
+.paths-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.path-card{background:#050A14;padding:48px 36px;position:relative;overflow:hidden;}
+.path-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:#B89D5A;}
+.path-num{font-family:Georgia,serif;font-size:64px;color:#0D1A2E;position:absolute;top:24px;right:24px;line-height:1;}
+.path-icon{font-size:32px;margin-bottom:20px;}
+.path-title{font-family:Georgia,serif;font-size:26px;color:#FAF8F4;font-style:italic;margin-bottom:6px;}
+.path-subtitle{font-family:Georgia,serif;font-size:15px;color:#B89D5A;letter-spacing:1px;margin-bottom:20px;}
+.path-body{font-size:16px;color:#9AB0C8;line-height:1.85;font-weight:300;margin-bottom:28px;}
+.path-features{list-style:none;margin-bottom:32px;}
+.path-features li{font-size:16px;color:#7A9AB8;padding:6px 0;border-bottom:1px solid #1F3552;display:flex;align-items:center;gap:8px;}
+.path-features li::before{content:'—';color:#B89D5A;font-size:10px;}
+.ponte-strip{background:#0D1A2E;padding:40px;border-top:1px solid #1F3552;border-bottom:1px solid #1F3552;display:flex;align-items:center;justify-content:space-between;}
+.ps-left{font-size:9px;color:#5A7A99;letter-spacing:3px;text-transform:uppercase;}
+.ps-mid{font-family:Georgia,serif;font-size:18px;color:#FAF8F4;letter-spacing:1px;}
+.ps-right{display:flex;gap:32px;}
+.ps-stat{text-align:center;}
+.ps-val{font-family:Georgia,serif;font-size:20px;color:#B89D5A;}
+.ps-label{font-size:8px;color:#5A7A99;letter-spacing:1.5px;text-transform:uppercase;}
+.testimonial{background:#050A14;padding:80px 40px;text-align:center;}
+.t-quote{font-family:Georgia,serif;font-size:28px;color:#FAF8F4;font-style:italic;max-width:760px;margin:0 auto 24px;line-height:1.4;}
+.t-attr{font-size:10px;color:#5A7A99;letter-spacing:3px;text-transform:uppercase;}
+.t-gold{color:#B89D5A;}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <div style="margin-bottom:28px;">
+      <img src="/assets/images/scott-steele-logo-transparent.png" alt="Scott Steele Realtor · The Ponte Group" style="height:160px;width:auto;display:block;"/>
+    </div>
+    <div class="hero-eyebrow">SE Massachusetts & Rhode Island · 20+ Markets</div>
+    <div class="hero-title">Scott<br><span>Steele</span></div>
+    <div class="hero-subtitle">CEO · Operating Principal · Realtor</div>
+    
+    <div class="inline-rule"><div class="inline-rule-line"></div><div class="inline-rule-text">Powered by The Ponte Group · KW South Watuppa</div></div>
+    <div class="hero-body">I'm not the agent who shows up with a generic market report and a hope. I'm the agent who knows your neighborhood's pricing pocket, what your competition looks like on the day we list, and exactly how to position your property to win. In 20+ markets across SE Massachusetts and Rhode Island.</div>
+    <div class="hero-btns">
+      <a class="btn-gold" href="/sellers">What's my home worth?</a>
+      <a class="btn-outline" href="https://ssteele.pontegroupne.com/property-search/results/#listtypeinclude_Residential/" target="_blank">Search homes</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hs"><div class="hs-val">27</div><div class="hs-label">Units — personal</div></div>
+      <div class="hs"><div class="hs-val">$13M<span class="hs-gold">+</span></div><div class="hs-label">Volume — personal</div></div>
+      <div class="hs"><div class="hs-val">102<span class="hs-gold">%</span></div><div class="hs-label">List-to-sale ratio</div></div>
+    </div>
+  </div>
+  <div class="hero-img-wrap">
+    <div class="hero-img-bg" style="background:none;border:none;">
+      <img src="/assets/images/scott-headshot.png" alt="Scott Steele" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;"/>
+      <div class="hero-img-badge">
+        <div><div class="hib-val">14</div><div class="hib-label">Day avg DOM</div></div>
+        <div><div class="hib-val">5 ★</div><div class="hib-label">Client rating</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="sbar-item"><div class="sbar-val">27</div><div class="sbar-label">Personal units</div></div>
+  <div class="sbar-item"><div class="sbar-val">$13M+</div><div class="sbar-label">Personal volume</div></div>
+  <div class="sbar-item"><div class="sbar-val">20+</div><div class="sbar-label">Markets served</div></div>
+  <div class="sbar-item"><div class="sbar-val">5 ★</div><div class="sbar-label">Client rating</div></div>
+  <div class="sbar-item"><div class="sbar-val">14</div><div class="sbar-label">Day avg DOM</div></div>
+  <div class="sbar-item"><div class="sbar-val">102%</div><div class="sbar-label">List-to-sale</div></div>
+</div>
+
+<!-- THREE PATHS -->
+<div class="paths">
+  <div class="paths-header">
+    <div class="eyebrow">How I can help</div>
+    <div class="section-title-light">What are you <span>trying to do?</span></div>
+    <div class="body-light" style="max-width:560px;margin:0 auto;">Three completely different conversations. Three completely different approaches. Tell me which one you are and I'll show you exactly how I work.</div>
+  </div>
+  <div class="paths-grid">
+    <div class="path-card">
+      <div class="path-num">01</div>
+      <div class="path-icon">🏠</div>
+      <div class="path-title">Selling</div>
+      <div class="path-subtitle">Sold for more. Sold sooner.</div>
+      <div class="path-body">14-day average DOM. 102% list-to-sale. My sellers don't leave money on the table — they walk away knowing every dollar was extracted from the market.</div>
+      <ul class="path-features">
+        <li>Precision pricing strategy</li>
+        <li>Professional photography & staging plan</li>
+        <li>Targeted digital + social marketing</li>
+        <li>Offer management and negotiation</li>
+        <li>Coordinated closing through Tracy Pavao</li>
+      </ul>
+      <a class="btn-gold" href="/sellers">See how I sell</a>
+    </div>
+    <div class="path-card">
+      <div class="path-num">02</div>
+      <div class="path-icon">🔑</div>
+      <div class="path-title">Buying</div>
+      <div class="path-subtitle">Buy with clarity. Never wonder.</div>
+      <div class="path-body">20+ markets. Off-market access. Preferred lenders and attorneys who close on time. I find you the right property at the right price and I never let a deal fall apart at the finish line.</div>
+      <ul class="path-features">
+        <li>Access to all 20+ SE Mass & RI markets</li>
+        <li>Off-market and pre-market sourcing</li>
+        <li>Trusted lenders — NorthPointe Bank</li>
+        <li>Preferred title — Balkun Title</li>
+        <li>Negotiation that wins without overpaying</li>
+      </ul>
+      <a class="btn-gold" href="https://ssteele.pontegroupne.com/property-search/results/#listtypeinclude_Residential/" target="_blank">Start your search</a>
+    </div>
+    <div class="path-card">
+      <div class="path-num">03</div>
+      <div class="path-icon">📈</div>
+      <div class="path-title">Agents</div>
+      <div class="path-subtitle">This isn't a typical team.</div>
+      <div class="path-body">Zillow Flex. FUB. Full marketing infrastructure. A coaching culture that actually develops agents. If you're running at capacity doing everything yourself, this is worth a conversation.</div>
+      <ul class="path-features">
+        <li>Zillow Preferred agent program</li>
+        <li>Follow Up Boss CRM — fully loaded</li>
+        <li>Marketing support from Daniel Dacosta</li>
+        <li>Transaction coordination — Tracy Pavao</li>
+        <li>Leadership access — Scott Steele direct</li>
+      </ul>
+      <a class="btn-gold" href="/agents">Learn more</a>
+    </div>
+  </div>
+</div>
+
+<!-- PONTE STRIP -->
+<div class="ponte-strip">
+  <div class="ps-left">Team performance</div>
+  <div class="ps-mid">The Ponte Group · Keller Williams South Watuppa</div>
+  <div class="ps-right">
+    <div class="ps-stat"><div class="ps-val">420+</div><div class="ps-label">Team units</div></div>
+    <div class="ps-stat"><div class="ps-val">$125M+</div><div class="ps-label">Team volume</div></div>
+    <div class="ps-stat"><div class="ps-val">14</div><div class="ps-label">Agents</div></div>
+  </div>
+</div>
+
+<!-- MARKETS TEASER -->
+<div class="section-light" style="padding:80px 40px;">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+    <div>
+      <div class="eyebrow">My markets</div>
+      <div class="section-title-light">SE Massachusetts &amp; Rhode Island — <span>I know both sides of the border.</span></div>
+      <div class="body-light" style="margin-bottom:28px;">20+ markets across Bristol County MA, Plymouth County MA, and Providence and Bristol County RI. From Fall River to Bristol, from Attleboro to Tiverton — I've sold, bought, and negotiated in all of them.</div>
+      <a class="btn-outline-light" href="/markets">Explore all 16 markets</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;">
+      <div class="card-cream" style="padding:16px 14px;text-align:center;">
+        <div style="font-family:Georgia,serif;font-size:15px;color:#050A14;margin-bottom:4px;">Fall River</div>
+        <div style="font-size:9px;color:#9AA0A8;">MA</div>
+      </div>
+      <div class="card-dark" style="padding:16px 14px;text-align:center;">
+        <div style="font-family:Georgia,serif;font-size:15px;color:#FAF8F4;margin-bottom:4px;">Dartmouth</div>
+        <div style="font-size:9px;color:#5A7A99;">MA · Luxury</div>
+      </div>
+      <div class="card-cream" style="padding:16px 14px;text-align:center;">
+        <div style="font-family:Georgia,serif;font-size:15px;color:#050A14;margin-bottom:4px;">New Bedford</div>
+        <div style="font-size:9px;color:#9AA0A8;">MA</div>
+      </div>
+      <div class="card-dark" style="padding:16px 14px;text-align:center;">
+        <div style="font-family:Georgia,serif;font-size:15px;color:#FAF8F4;margin-bottom:4px;">Westport</div>
+        <div style="font-size:9px;color:#5A7A99;">MA · Luxury</div>
+      </div>
+      <div class="card-cream" style="padding:16px 14px;text-align:center;">
+        <div style="font-family:Georgia,serif;font-size:15px;color:#050A14;margin-bottom:4px;">Swansea</div>
+        <div style="font-size:9px;color:#9AA0A8;">MA</div>
+      </div>
+      <div class="card-dark" style="padding:16px 14px;text-align:center;">
+        <div style="font-family:Georgia,serif;font-size:15px;color:#FAF8F4;margin-bottom:4px;">Bristol</div>
+        <div style="font-size:9px;color:#5A7A99;">RI · Luxury</div>
+      </div>
+      <div class="card-cream" style="padding:16px 14px;text-align:center;">
+        <div style="font-family:Georgia,serif;font-size:15px;color:#050A14;margin-bottom:4px;">Taunton</div>
+        <div style="font-size:9px;color:#9AA0A8;">MA</div>
+      </div>
+      <div class="card-dark" style="padding:16px 14px;text-align:center;">
+        <div style="font-family:Georgia,serif;font-size:15px;color:#FAF8F4;margin-bottom:4px;">Tiverton</div>
+        <div style="font-size:9px;color:#5A7A99;">RI · Luxury</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIAL -->
+<div class="testimonial">
+  <div class="eyebrow" style="text-align:center;">Client experience</div>
+  <div class="t-quote">"Scott texted me back on a Sunday evening within 20 minutes. By Monday he had already set up three showings. That's not luck — that's how he operates."</div>
+  <div class="t-attr">— <span class="t-gold">Verified client</span> · Fall River, MA</div>
+</div>
+
+<!-- CTA STRIP -->
+<div class="section-mid" style="padding:64px 40px;">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+    <div>
+      <div class="eyebrow">Ready to start?</div>
+      <div class="section-title-dark">Same-day response. <span>Always.</span></div>
+      <div class="body-dark" style="margin-bottom:28px;">Whether you're ready to list, starting your search, or just have questions about what's happening in the market — reach out directly. I respond the same day.</div>
+      <div style="display:flex;gap:12px;">
+        <a class="btn-gold" href="/contact">Contact Scott</a>
+        <a class="btn-outline" href="tel:5088139267">508.813.9267</a>
+      </div>
+    </div>
+    <div class="contact-strip">
+      <div class="contact-row"><span class="contact-row-label">Call or text</span><span class="contact-row-val-gold">508.813.9267</span></div>
+      <div class="contact-row"><span class="contact-row-label">Email</span><span class="contact-row-val-gold">Ssteelere@KW.com</span></div>
+      <div class="contact-row"><span class="contact-row-label">License</span><span class="contact-row-val-white">MA & RI</span></div>
+      <div class="contact-row"><span class="contact-row-label">Response</span><span class="contact-row-val-white">Same day. Always.</span></div>
+    </div>
+  </div>
+</div>
+
+<div id="footer-placeholder"></div>
+<script src="/assets/js/brand.js"></script>
+<script>initPage('');</script>
+</body>
+</html>
