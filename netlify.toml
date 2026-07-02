@@ -1,4 +1,39 @@
 [[redirects]]
-  from = "/*"
+  from = "/"
   to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/sellers"
+  to = "/sellers.html"
+  status = 200
+
+[[redirects]]
+  from = "/buyers"
+  to = "/buyers.html"
+  status = 200
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 200
+
+[[redirects]]
+  from = "/agents"
+  to = "/agents.html"
+  status = 200
+
+[[redirects]]
+  from = "/markets"
+  to = "/markets.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog.html"
+  status = 200
+
+[[redirects]]
+  from = "/schools"
+  to = "/schools.html"
   status = 200
