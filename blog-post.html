@@ -382,9 +382,6 @@ async function loadPost() {
     const data = await res.json();
     const rows = data.values || [];
 
-    console.log('Total rows:', rows.length);
-    console.log('Looking for slug:', slug);
-    if (rows.length > 0) console.log('First row slug:', rows[0][5]);
     const post = rows.map(r => ({
       title:     r[0] || '',
       date:      r[1] || '',
