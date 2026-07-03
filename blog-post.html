@@ -331,26 +331,19 @@ const API_KEY  = "AIzaSyDmo4NJNmjFWiXv4RNH7s5w7SAsqiwQG2s";
 function parseMarkdown(md) {
   if (!md) return '';
   let html = md
-    // Headings
     .replace(/^### (.+)$/gm, '<h3>$1</h3>')
     .replace(/^## (.+)$/gm, '<h2>$1</h2>')
     .replace(/^# (.+)$/gm, '<h1>$1</h1>')
-    // Bold and italic
-    .replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>')
-    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.+?)\*/g, '<em>$1</em>')
-    // Blockquote
+    .replace(/[*][*][*](.+?)[*][*][*]/g, '<strong><em>$1</em></strong>')
+    .replace(/[*][*](.+?)[*][*]/g, '<strong>$1</strong>')
+    .replace(/[*](.+?)[*]/g, '<em>$1</em>')
     .replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>')
-    // HR
     .replace(/^---$/gm, '<hr>')
-    // Unordered list items
-    .replace(/^\- (.+)$/gm, '<li>$1</li>')
-    // Ordered list items
-    .replace(/^\d+\. (.+)$/gm, '<li>$1</li>');
+    .replace(/^- (.+)$/gm, '<li>$1</li>')
+    .replace(/^[0-9]+[.] (.+)$/gm, '<li>$1</li>');
 
   // Wrap consecutive <li> in <ul>
-  html = html.replace(/(<li>.*<\/li>
-?)+/g, m => '<ul>' + m + '</ul>');
+  html = html.replace(/(<li>[\s\S]*?<\/li>\s*)+/g, m => '<ul>' + m + '</ul>');
 
   // Paragraphs — wrap lines that aren't already HTML tags
   html = html.split('\n\n').map(block => {
