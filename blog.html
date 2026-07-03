@@ -651,9 +651,8 @@ function renderPosts(posts) {
 }
 
 function postHref(post) {
-  // Only use slug if it's a simple word/hyphen string, not an external URL
   if (post.slug && !post.slug.startsWith('http') && post.slug.trim() !== '') {
-    return `/blog/${post.slug}`;
+    return `/blog-post.html?slug=${post.slug}`;
   }
   return "#";
 }
