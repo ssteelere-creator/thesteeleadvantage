@@ -1384,7 +1384,7 @@
 </footer>
 
 <!-- ══════════════ TIDIO CHAT ══════════════ -->
-<script src="//code.tidio.co/lu4v35oxfnh1txcrtcfrgksv09baqhcx.js" async></script>
+<script src="//code.tidio.co/REPLACE_WITH_YOUR_TIDIO_PUBLIC_KEY.js" async></script>
 
 <script>
   // ── STICKY NAV ──
@@ -1411,7 +1411,7 @@
 
   // ── STAT COUNTER ANIMATION ──
   const statNums = document.querySelectorAll(
-    '.h-stat-num span, .proof-num span, .team-stat-num span'
+    '.h-stat-num span:not(.proof-suffix), .proof-num span:not(.proof-suffix), .team-stat-num span:not(.proof-suffix)'
   );
   const statObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
