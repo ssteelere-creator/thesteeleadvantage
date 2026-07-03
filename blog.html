@@ -651,8 +651,11 @@ function renderPosts(posts) {
 }
 
 function postHref(post) {
-  // If slug provided, link to a future individual post page; for now opens in new tab via anchor
-  return post.slug ? `/blog/${post.slug}` : "#";
+  // Only use slug if it's a simple word/hyphen string, not an external URL
+  if (post.slug && !post.slug.startsWith('http') && post.slug.trim() !== '') {
+    return `/blog/${post.slug}`;
+  }
+  return "#";
 }
 
 // ─────────────────────────────────────────────
