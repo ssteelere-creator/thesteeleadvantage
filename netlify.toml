@@ -1,44 +1,71 @@
+# .html -> clean URL (301, consolidates duplicate URLs)
 [[redirects]]
-  from = "/"
-  to = "/index.html"
-  status = 200
+  from = "/sellers.html"
+  to = "/sellers"
+  status = 301
+[[redirects]]
+  from = "/buyers.html"
+  to = "/buyers"
+  status = 301
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact"
+  status = 301
+[[redirects]]
+  from = "/agents.html"
+  to = "/agents"
+  status = 301
+[[redirects]]
+  from = "/markets.html"
+  to = "/markets"
+  status = 301
+[[redirects]]
+  from = "/blog.html"
+  to = "/blog"
+  status = 301
+[[redirects]]
+  from = "/schools.html"
+  to = "/schools"
+  status = 301
 
+# Clean URLs serve page files (forced rewrites — cannot be shadowed)
 [[redirects]]
   from = "/sellers"
   to = "/sellers.html"
   status = 200
-
+  force = true
 [[redirects]]
   from = "/buyers"
   to = "/buyers.html"
   status = 200
-
+  force = true
 [[redirects]]
   from = "/contact"
   to = "/contact.html"
   status = 200
-
+  force = true
 [[redirects]]
   from = "/agents"
   to = "/agents.html"
   status = 200
-
+  force = true
 [[redirects]]
   from = "/markets"
   to = "/markets.html"
   status = 200
-
+  force = true
 [[redirects]]
   from = "/blog"
   to = "/blog.html"
   status = 200
-
+  force = true
 [[redirects]]
   from = "/schools"
   to = "/schools.html"
   status = 200
-
+  force = true
 [[redirects]]
   from = "/blog/*"
   to = "/blog-post.html"
   status = 200
+  force = true
