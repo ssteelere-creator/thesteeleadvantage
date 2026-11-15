@@ -1,3 +1,9 @@
+# Content-hashed image files — safe to cache forever
+[[headers]]
+  for = "/assets/images/inline/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
 # .html -> clean URL (301, consolidates duplicate URLs)
 [[redirects]]
   from = "/sellers.html"
