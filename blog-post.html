@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X02SWDQGK0"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-X02SWDQGK0');
-  </script>
-  <title>Real Estate Insights | Scott Steele — SE Massachusetts & RI</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23050A14'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' fill='%23B89D5A' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
-  <meta name="description" content="Real estate insights and local market updates from Scott Steele, The Ponte Group at KW South Watuppa.">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title id="page-title">Blog | Scott Steele</title>
-<meta name="description" id="page-desc" content="Real estate insights from Scott Steele — SE Massachusetts and Rhode Island.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X02SWDQGK0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-X02SWDQGK0');
+</script>
+<title id="page-title">Real Estate Insights | Scott Steele — SE Massachusetts & RI</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23050A14'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' fill='%23B89D5A' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<meta name="description" id="page-desc" content="Real estate insights and local market updates from Scott Steele, The Ponte Group at KW South Watuppa.">
 <link rel="canonical" id="page-canonical" href="https://thesteeleadvantage.com/blog">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="The Steele Advantage">
+<meta property="og:url" id="og-url" content="https://thesteeleadvantage.com/blog">
 <meta property="og:title" id="og-title" content="Blog | Scott Steele">
 <meta property="og:description" id="og-desc" content="">
 <meta property="og:image" id="og-image" content="https://thesteeleadvantage.com/assets/images/scott-headshot.png">
+<script type="application/ld+json" id="post-jsonld"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -412,14 +412,35 @@ async function loadPost() {
     }
 
     // Populate page
+    const pageUrl = `https://thesteeleadvantage.com/blog/${post.slug}`;
+    const metaDesc = post.summary || `Real estate insights from Scott Steele — SE Massachusetts and Rhode Island.`;
     document.title = `${post.title} | Scott Steele`;
     document.getElementById('page-title').textContent = `${post.title} | Scott Steele`;
+    document.getElementById('page-desc').content = metaDesc;
+    document.getElementById('page-canonical').href = pageUrl;
+    document.getElementById('og-url').content = pageUrl;
     document.getElementById('og-title').content = post.title;
-    document.getElementById('og-desc').content = post.summary;
+    document.getElementById('og-desc').content = metaDesc;
     document.getElementById('post-cat').textContent = post.category;
     document.getElementById('post-title').textContent = post.title;
     document.getElementById('post-date').textContent = post.date;
     document.getElementById('post-content').innerHTML = parseMarkdown(post.body);
+    document.getElementById('post-jsonld').textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": metaDesc,
+      "datePublished": post.date,
+      "url": pageUrl,
+      "image": post.image || "https://thesteeleadvantage.com/assets/images/scott-headshot.png",
+      "author": { "@type": "Person", "name": "Scott Steele" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Steele Advantage",
+        "logo": { "@type": "ImageObject", "url": "https://thesteeleadvantage.com/assets/images/scott-steele-logo-transparent.png" }
+      },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": pageUrl }
+    });
 
     if (post.image) {
       const img = document.getElementById('post-img');

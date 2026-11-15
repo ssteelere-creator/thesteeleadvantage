@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X02SWDQGK0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-X02SWDQGK0');
+</script>
+<title id="page-title">Real Estate Insights | Scott Steele — SE Massachusetts & RI</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23050A14'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' fill='%23B89D5A' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<meta name="description" id="page-desc" content="Real estate insights and local market updates from Scott Steele, The Ponte Group at KW South Watuppa.">
+<link rel="canonical" id="page-canonical" href="https://thesteeleadvantage.com/blog">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Steele Advantage">
+<meta property="og:url" id="og-url" content="https://thesteeleadvantage.com/blog">
+<meta property="og:title" id="og-title" content="Blog | Scott Steele">
+<meta property="og:description" id="og-desc" content="">
+<meta property="og:image" id="og-image" content="https://thesteeleadvantage.com/assets/images/scott-headshot.png">
+<script type="application/ld+json" id="post-jsonld"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cormorant+SC:wght@300;400;500&family=Manrope:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:       #050A14;
+    --navy-deep:  #03060D;
+    --navy-mid:   #0A1228;
+    --navy-surf:  #0F1A35;
+    --gold:       #B89D5A;
+    --gold-light: #CDB97A;
+    --gold-dim:   rgba(184,157,90,0.55);
+    --gold-faint: rgba(184,157,90,0.12);
+    --cream:      #FAF8F4;
+    --cream-dim:  rgba(250,248,244,0.72);
+    --cream-faint:rgba(250,248,244,0.45);
+    --border:     rgba(184,157,90,0.16);
+    --nav-h:      116px;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--navy); color: var(--cream); font-family: 'Manrope', sans-serif; font-weight: 300; overflow-x: hidden; }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--navy); }
+  ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+  /* NAV */
+  nav#mainNav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; padding: 0 56px; z-index: 1000; transition: background .4s ease, backdrop-filter .4s, border-color .4s; border-bottom: 1px solid transparent; }
+  nav#mainNav.scrolled { background: rgba(5,10,20,0.96); backdrop-filter: blur(12px); border-color: var(--border); }
+  .nav-logo { height: 64px; display: block; }
+  .nav-logo img { height: 100%; width: auto; }
+  .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+  .nav-links a { font-family: 'Manrope', sans-serif; font-size: 10.5px; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; color: var(--cream-dim); text-decoration: none; position: relative; padding-bottom: 3px; transition: color .3s; }
+  .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold); transition: width .35s ease; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-links a.active { color: var(--gold); }
+  .nav-links a.active::after { width: 100%; }
+  .nav-cta { background: var(--gold); color: var(--navy) !important; padding: 10px 22px; border-radius: 2px; font-size: 10px; letter-spacing: 2.5px; }
+  .nav-cta:hover { background: var(--gold) !important; color: var(--navy) !important; }
+  .nav-cta::after { display: none !important; }
+  .nav-toggle { display: none; }
+  .drawer-overlay { display: none; position: fixed; inset: 0; background: rgba(3,6,13,0.6); z-index: 1998; }
+  .drawer-overlay.open { display: block; }
+  .mobile-drawer { position: fixed; top: 0; right: -320px; width: 300px; height: 100vh; background: var(--navy-mid); z-index: 1999; transition: right .35s ease; display: flex; flex-direction: column; padding: 32px 0; border-left: 1px solid var(--border); }
+  .mobile-drawer.open { right: 0; }
+  .drawer-head { display: flex; justify-content: flex-end; padding: 0 24px 24px; border-bottom: 1px solid var(--border); margin-bottom: 12px; }
+  .drawer-close { background: none; border: none; color: var(--cream-dim); font-size: 20px; cursor: pointer; }
+  .drawer-nav { padding: 20px 0; }
+  .drawer-nav a { display: block; padding: 14px 28px; font-family: 'Manrope', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--cream-dim); text-decoration: none; border-bottom: 1px solid var(--border); transition: color .25s, background .25s; }
+  .drawer-nav a:hover, .drawer-nav a.active-drawer { color: var(--gold); background: var(--gold-faint); }
+  .dn-arrow { margin-left: 8px; opacity: 0.5; }
+  .drawer-cta { padding: 24px 28px 0; }
+  .drawer-cta a { display: block; text-align: center; background: var(--gold); color: var(--navy); padding: 14px; border-radius: 2px; font-family: 'Manrope', sans-serif; font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none; font-weight: 600; }
+
+  /* POST HERO */
+  #post-hero {
+    padding-top: calc(var(--nav-h) + 64px);
+    padding-bottom: 56px;
+    padding-left: 10vw; padding-right: 10vw;
+    border-bottom: 1px solid var(--border);
+  }
+  .post-back {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); text-decoration: none;
+    margin-bottom: 32px; transition: opacity .2s;
+  }
+  .post-back:hover { opacity: 0.7; }
+  .post-cat-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px;
+  }
+  .post-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.6rem);
+    font-weight: 300; line-height: 1.15; color: var(--cream);
+    margin-bottom: 20px; max-width: 860px;
+  }
+  .post-byline {
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px; color: var(--cream-faint);
+    display: flex; gap: 24px; flex-wrap: wrap;
+  }
+  .post-featured-img {
+    width: 100%; max-height: 480px;
+    object-fit: cover; border-radius: 4px;
+    margin-top: 40px;
+    border: 1px solid var(--border);
+  }
+
+  /* POST BODY */
+  #post-body {
+    padding: 56px 10vw 80px;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 64px;
+    align-items: start;
+  }
+  .post-content { max-width: 720px; }
+  .post-content p {
+    font-size: 15px; line-height: 1.85;
+    color: var(--cream-dim); margin-bottom: 24px;
+  }
+  .post-content h1, .post-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400; color: var(--cream);
+    margin: 40px 0 16px; line-height: 1.2;
+  }
+  .post-content h1 { font-size: clamp(1.6rem, 3vw, 2.4rem); }
+  .post-content h2 { font-size: clamp(1.3rem, 2.5vw, 1.9rem); }
+  .post-content h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); margin: 32px 0 12px;
+  }
+  .post-content strong { color: var(--cream); font-weight: 600; }
+  .post-content em { font-style: italic; color: var(--gold-light); }
+  .post-content ul, .post-content ol {
+    margin: 0 0 24px 24px; color: var(--cream-dim);
+    font-size: 15px; line-height: 1.85;
+  }
+  .post-content li { margin-bottom: 8px; }
+  .post-content blockquote {
+    border-left: 3px solid var(--gold);
+    padding: 16px 24px; margin: 32px 0;
+    background: var(--gold-faint); border-radius: 0 4px 4px 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-style: italic;
+    color: var(--cream);
+  }
+  .post-content hr {
+    border: none; border-top: 1px solid var(--border);
+    margin: 40px 0;
+  }
+  .post-content a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+
+  /* SIDEBAR */
+  .post-sidebar { position: sticky; top: calc(var(--nav-h) + 32px); }
+  .sidebar-card {
+    background: var(--navy-mid);
+    border: 1px solid var(--border);
+    border-radius: 4px; padding: 28px;
+    margin-bottom: 24px;
+  }
+  .sidebar-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px;
+  }
+  .sidebar-card p {
+    font-size: 12.5px; color: var(--cream-dim); line-height: 1.7; margin-bottom: 16px;
+  }
+  .sidebar-btn {
+    display: block; text-align: center;
+    background: var(--gold); color: var(--navy);
+    padding: 12px; border-radius: 2px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase;
+    font-weight: 600; text-decoration: none;
+    transition: opacity .2s;
+  }
+  .sidebar-btn:hover { opacity: 0.88; }
+
+  /* LOADING */
+  #post-loading {
+    padding: calc(var(--nav-h) + 120px) 10vw 80px;
+    text-align: center;
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--cream-faint);
+  }
+  #post-error {
+    display: none;
+    padding: calc(var(--nav-h) + 120px) 10vw 80px;
+    text-align: center;
+  }
+  #post-error h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; color: var(--cream); margin-bottom: 12px;
+  }
+  #post-error p { font-size: 13px; color: var(--cream-dim); margin-bottom: 24px; }
+
+  /* FOOTER */
+  footer { background: var(--navy-deep); padding: 32px 10vw; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .footer-copy { font-family: 'Manrope', sans-serif; font-size: 10px; letter-spacing: 1.5px; color: var(--cream-faint); }
+  .footer-links { display: flex; gap: 24px; list-style: none; }
+  .footer-links a { font-family: 'Manrope', sans-serif; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--cream-faint); text-decoration: none; transition: color .2s; }
+  .footer-links a:hover { color: var(--gold); }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .nav-toggle { display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+    .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--cream); }
+    nav#mainNav { padding: 0 24px; }
+    #post-body { grid-template-columns: 1fr; gap: 40px; }
+    .post-sidebar { position: static; }
+    #post-hero { padding-left: 6vw; padding-right: 6vw; }
+    #post-body { padding: 40px 6vw 60px; }
+    footer { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ MOBILE DRAWER ══════════════ -->
+<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-header">
+    <div>
+      <div class="drawer-brand-name">Scott Steele</div>
+      <div class="drawer-brand-sub">Realtor · SE Mass & RI</div>
+    </div>
+    <button class="drawer-close" onclick="closeDrawer()">✕</button>
+  </div>
+  <nav class="drawer-nav">
+    <a href="/">Home <span class="dn-arrow">→</span></a>
+    <a href="/sellers">Sellers <span class="dn-arrow">→</span></a>
+    <a href="/buyers">Buyers <span class="dn-arrow">→</span></a>
+    <a href="https://ssteele.pontegroupne.com/property-search/results/#listtypeinclude_Residential/" target="_blank">Property Search <span class="dn-arrow">→</span></a>
+    <a href="/markets">Markets <span class="dn-arrow">→</span></a>
+    <a href="/agents">Join the Team <span class="dn-arrow">→</span></a>
+    <a href="/blog" class="active-drawer">Blog <span class="dn-arrow">→</span></a>
+    <a href="/schools">Schools <span class="dn-arrow">→</span></a>
+    <a href="/contact">Contact <span class="dn-arrow">→</span></a>
+  </nav>
+  <div class="drawer-cta">
+    <a href="/contact">Book a Consultation</a>
+  </div>
+  <div class="drawer-contact">
+    <div>Scott Steele · The Ponte Group</div>
+    <div>Keller Williams South Watuppa</div>
+    <div>SE Massachusetts &amp; Rhode Island</div>
+    <div style="margin-top:8px;"><a href="tel:5088139267">(508) 813-9267</a></div>
+    <div><a href="mailto:Ssteelere@gmail.com">Ssteelere@gmail.com</a></div>
+  </div>
+</div>
+
+<!-- ══════════════ NAV ══════════════ -->
+<nav id="mainNav" class="nav-home-active">
+  <a href="/" class="nav-logo">
+    <img src="/assets/images/inline/img-8af1fec197.png" alt="Scott Steele Realtor logo" style="height:126px;width:auto;">
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="/sellers">Sellers</a></li>
+    <li><a href="/buyers">Buyers</a></li>
+    <li><a href="https://ssteele.pontegroupne.com/property-search/results/#listtypeinclude_Residential/" target="_blank">Search</a></li>
+    <li><a href="/markets">Markets</a></li>
+    <li><a href="/agents">Join the Team</a></li>
+    <li><a href="/blog" class="active">Blog</a></li>
+    <li><a href="/schools">Schools</a></li>
+    <li><a href="/contact" class="nav-cta">Contact Scott</a></li>
+  </ul>
+
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" onclick="openDrawer()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ══════════════ HERO ══════════════ -->
+
+<div id="post-loading">Loading article…</div>
+<div id="post-error">
+  <h2>Article Not Found</h2>
+  <p>This post may have moved or been removed.</p>
+  <a href="/blog" style="color:var(--gold);">← Back to Blog</a>
+</div>
+
+<div id="post-wrap" style="display:none;">
+  <section id="post-hero">
+    <a href="/blog" class="post-back">← Back to Blog</a>
+    <div class="post-cat-label" id="post-cat"></div>
+    <h1 class="post-headline" id="post-title"></h1>
+    <div class="post-byline">
+      <span id="post-date"></span>
+      <span>Scott Steele · The Ponte Group at KW South Watuppa</span>
+    </div>
+    <img id="post-img" class="post-featured-img" style="display:none;" alt="">
+  </section>
+
+  <section id="post-body">
+    <div class="post-content" id="post-content"></div>
+    <aside class="post-sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-label">Ready to Make a Move?</div>
+        <p>Get a free consultation and find out exactly where the market stands in your area.</p>
+        <a href="/contact" class="sidebar-btn">Book a Consultation</a>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-label">Search Properties</div>
+        <p>Browse active listings across SE Massachusetts and Rhode Island.</p>
+        <a href="https://ssteele.pontegroupne.com/property-search/results/#listtypeinclude_Residential/" target="_blank" class="sidebar-btn">Search Listings</a>
+      </div>
+    </aside>
+  </section>
+</div>
+
+<footer>
+  <p class="footer-copy">© 2025 Scott Steele · The Ponte Group at Keller Williams South Watuppa · Licensed in MA &amp; RI</p>
+  <ul class="footer-links">
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+</footer>
+
+<script src="//code.tidio.co/lu4v35oxfnh1txcrtcfrgksv09baqhcx.js" async></script>
+
+<script>
+const SHEET_ID = "1JKUdppBbPISJZTZU_-Dqe0W7_K6ydlyOr5GtgSz6Ze4";
+const API_KEY  = "AIzaSyDmo4NJNmjFWiXv4RNH7s5w7SAsqiwQG2s";
+
+// ── Simple Markdown Parser ──
+function parseMarkdown(md) {
+  if (!md) return '';
+  let html = md
+    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+    .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+    .replace(/[*][*][*](.+?)[*][*][*]/g, '<strong><em>$1</em></strong>')
+    .replace(/[*][*](.+?)[*][*]/g, '<strong>$1</strong>')
+    .replace(/[*](.+?)[*]/g, '<em>$1</em>')
+    .replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>')
+    .replace(/^---$/gm, '<hr>')
+    .replace(/^- (.+)$/gm, '<li>$1</li>')
+    .replace(/^[0-9]+[.] (.+)$/gm, '<li>$1</li>');
+
+  // Wrap consecutive <li> in <ul>
+  html = html.replace(/(<li>[\s\S]*?<\/li>\s*)+/g, m => '<ul>' + m + '</ul>');
+
+  // Paragraphs — wrap lines that aren't already HTML tags
+  html = html.split('\n\n').map(block => {
+    block = block.trim();
+    if (!block) return '';
+    if (block.startsWith('<')) return block;
+    return '<p>' + block.replace(/\n/g, '<br>') + '</p>';
+  }).join('\n');
+
+  return html;
+}
+
+// ── Get slug from URL ──
+function getSlug() {
+  const path = window.location.pathname;
+  const parts = path.split('/').filter(Boolean);
+  // Expects /blog/slug or /blog-post.html?slug=xxx
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('slug')) return params.get('slug');
+  if (parts.length >= 2 && parts[0] === 'blog') return parts[1];
+  return null;
+}
+
+// ── Load post ──
+async function loadPost() {
+  const slug = getSlug();
+  if (!slug) {
+    document.getElementById('post-loading').style.display = 'none';
+    document.getElementById('post-error').style.display = 'block';
+    return;
+  }
+
+  const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Posts!A2:H?key=${API_KEY}`;
+  try {
+    const res  = await fetch(url);
+    const data = await res.json();
+    const rows = data.values || [];
+
+    const post = rows.map(r => ({
+      title:     r[0] || '',
+      date:      r[1] || '',
+      category:  r[2] || '',
+      summary:   r[3] || '',
+      body:      r[4] || '',
+      slug:      r[5] || '',
+      published: (r[6] || 'yes').toLowerCase() !== 'no',
+      image:     r[7] || ''
+    })).find(p => p.slug === slug && p.published);
+
+    document.getElementById('post-loading').style.display = 'none';
+
+    if (!post) {
+      document.getElementById('post-error').style.display = 'block';
+      return;
+    }
+
+    // Populate page
+    const pageUrl = `https://thesteeleadvantage.com/blog/${post.slug}`;
+    const metaDesc = post.summary || `Real estate insights from Scott Steele — SE Massachusetts and Rhode Island.`;
+    document.title = `${post.title} | Scott Steele`;
+    document.getElementById('page-title').textContent = `${post.title} | Scott Steele`;
+    document.getElementById('page-desc').content = metaDesc;
+    document.getElementById('page-canonical').href = pageUrl;
+    document.getElementById('og-url').content = pageUrl;
+    document.getElementById('og-title').content = post.title;
+    document.getElementById('og-desc').content = metaDesc;
+    document.getElementById('post-cat').textContent = post.category;
+    document.getElementById('post-title').textContent = post.title;
+    document.getElementById('post-date').textContent = post.date;
+    document.getElementById('post-content').innerHTML = parseMarkdown(post.body);
+    document.getElementById('post-jsonld').textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": metaDesc,
+      "datePublished": post.date,
+      "url": pageUrl,
+      "image": post.image || "https://thesteeleadvantage.com/assets/images/scott-headshot.png",
+      "author": { "@type": "Person", "name": "Scott Steele" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Steele Advantage",
+        "logo": { "@type": "ImageObject", "url": "https://thesteeleadvantage.com/assets/images/scott-steele-logo-transparent.png" }
+      },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": pageUrl }
+    });
+
+    if (post.image) {
+      const img = document.getElementById('post-img');
+      img.src = post.image;
+      img.alt = post.title;
+      img.style.display = 'block';
+      document.getElementById('og-image').content = post.image;
+    }
+
+    document.getElementById('post-wrap').style.display = 'block';
+
+  } catch(e) {
+    document.getElementById('post-loading').style.display = 'none';
+    document.getElementById('post-error').style.display = 'block';
+  }
+}
+
+// ── Sticky nav ──
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
+function openDrawer()  { document.getElementById('mobileDrawer').classList.add('open'); document.getElementById('drawerOverlay').classList.add('open'); }
+function closeDrawer() { document.getElementById('mobileDrawer').classList.remove('open'); document.getElementById('drawerOverlay').classList.remove('open'); }
+
+loadPost();
+</script>
+</body>
+</html>

@@ -1,3 +1,9 @@
+[build]
+  functions = "netlify/functions"
+
+[functions."blog-post"]
+  included_files = ["netlify/functions/blog-post-template.html"]
+
 # Content-hashed image files — safe to cache forever
 [[headers]]
   for = "/assets/images/inline/*"
@@ -72,6 +78,6 @@
   force = true
 [[redirects]]
   from = "/blog/*"
-  to = "/blog-post.html"
+  to = "/.netlify/functions/blog-post"
   status = 200
   force = true

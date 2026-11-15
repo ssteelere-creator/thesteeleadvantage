@@ -653,7 +653,7 @@ function renderPosts(posts) {
 
 function postHref(post) {
   if (post.slug && !post.slug.startsWith('http') && post.slug.trim() !== '') {
-    return `/blog-post.html?slug=${post.slug}`;
+    return `/blog/${post.slug}`;
   }
   return "#";
 }
