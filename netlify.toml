@@ -81,3 +81,8 @@
   to = "/.netlify/functions/blog-post"
   status = 200
   force = true
+[[redirects]]
+  from = "/sitemap-blog.xml"
+  to = "/.netlify/functions/sitemap-blog"
+  status = 200
+  force = true
